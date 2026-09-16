@@ -38,6 +38,10 @@ export default function Home() {
     return media.url || null;
   };
 
+  const closeMobileMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <main style={styles.page}>
 
@@ -60,63 +64,119 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={styles.navLinks}>
-          <a href="#home" style={styles.navLink}>
+        <div
+          className="navLinksResponsive"
+          style={styles.navLinks}
+        >
+          <a
+            href="#home"
+            style={styles.navLink}
+            onClick={closeMobileMenu}
+          >
             Home
           </a>
 
-          <a href="#about" style={styles.navLink}>
+          <a
+            href="#about"
+            style={styles.navLink}
+            onClick={closeMobileMenu}
+          >
             About
           </a>
 
-          <a href="#services" style={styles.navLink}>
+          <a
+            href="#services"
+            style={styles.navLink}
+            onClick={closeMobileMenu}
+          >
             Services
           </a>
 
-          <a href="#projects" style={styles.navLink}>
+          <a
+            href="#projects"
+            style={styles.navLink}
+            onClick={closeMobileMenu}
+          >
             Projects
           </a>
 
-          <a href="#properties" style={styles.navLink}>
+          <a
+            href="#properties"
+            style={styles.navLink}
+            onClick={closeMobileMenu}
+          >
             Properties
           </a>
 
-          <a href="#contact" style={styles.navLink}>
+          <a
+            href="#contact"
+            style={styles.navLink}
+            onClick={closeMobileMenu}
+          >
             Contact
           </a>
         </div>
 
         <button
+          className="menuButtonResponsive"
           onClick={() => setMenuOpen(!menuOpen)}
           style={styles.menuButton}
+          aria-label="Open navigation menu"
         >
           ☰
         </button>
       </nav>
 
       {menuOpen && (
-        <div style={styles.mobileMenu}>
-          <a href="#home" style={styles.mobileLink}>
+        <div
+          className="mobileMenuResponsive"
+          style={styles.mobileMenu}
+        >
+          <a
+            href="#home"
+            style={styles.mobileLink}
+            onClick={closeMobileMenu}
+          >
             Home
           </a>
 
-          <a href="#about" style={styles.mobileLink}>
+          <a
+            href="#about"
+            style={styles.mobileLink}
+            onClick={closeMobileMenu}
+          >
             About
           </a>
 
-          <a href="#services" style={styles.mobileLink}>
+          <a
+            href="#services"
+            style={styles.mobileLink}
+            onClick={closeMobileMenu}
+          >
             Services
           </a>
 
-          <a href="#projects" style={styles.mobileLink}>
+          <a
+            href="#projects"
+            style={styles.mobileLink}
+            onClick={closeMobileMenu}
+          >
             Projects
           </a>
 
-          <a href="#properties" style={styles.mobileLink}>
+          <a
+            href="#properties"
+            style={styles.mobileLink}
+            onClick={closeMobileMenu}
+          >
             Properties
           </a>
 
-          <a href="#contact" style={styles.mobileLink}>
+          <a
+            href="#contact"
+            style={styles.mobileLink}
+            onClick={closeMobileMenu}
+          >
             Contact
           </a>
         </div>
@@ -194,7 +254,10 @@ export default function Home() {
             every project we undertake.
           </p>
 
-          <div style={styles.valuesRow}>
+          <div
+            className="valuesRowResponsive"
+            style={styles.valuesRow}
+          >
 
             <div style={styles.valueCard}>
               <h3 style={styles.valueTitle}>
@@ -251,7 +314,10 @@ export default function Home() {
 
         </div>
 
-        <div style={styles.cardGrid}>
+        <div
+          className="cardGridResponsive"
+          style={styles.cardGrid}
+        >
 
           <div style={styles.imageCard}>
             <img
@@ -349,7 +415,10 @@ export default function Home() {
 
         </div>
 
-        <div style={styles.servicesGrid}>
+        <div
+          className="servicesGridResponsive"
+          style={styles.servicesGrid}
+        >
 
           <div style={styles.serviceCard}>
             <h3 style={styles.serviceTitle}>
@@ -407,7 +476,10 @@ export default function Home() {
             project.
           </p>
 
-          <div style={styles.projectsGrid}>
+          <div
+            className="projectsGridResponsive"
+            style={styles.projectsGrid}
+          >
 
             <div
               style={styles.projectCard}
@@ -487,7 +559,10 @@ export default function Home() {
         </div>
 
         {properties.length > 0 ? (
-          <div style={styles.propertyViewport}>
+          <div
+            className="propertyViewportResponsive"
+            style={styles.propertyViewport}
+          >
 
             <div className="property-track">
 
@@ -503,6 +578,7 @@ export default function Home() {
                   return (
                     <div
                       key={`${property.id}-${index}`}
+                      className="propertyCardResponsive"
                       style={styles.propertyCard}
                     >
 
@@ -530,6 +606,7 @@ export default function Home() {
                                     key={videoIndex}
                                     src={videoUrl}
                                     controls
+                                    playsInline
                                     style={
                                       styles.propertyVideo
                                     }
@@ -603,407 +680,762 @@ export default function Home() {
       </section>
 
       {/* =========================
-    BOOKING SECTION
-========================= */}
-<section id="booking" style={styles.booking}>
+          BOOKING SECTION
+      ========================= */}
+      <section id="booking" style={styles.booking}>
 
-  <div style={styles.bookingOverlay}>
+        <div style={styles.bookingOverlay}>
 
-    <div style={styles.bookingContainer}>
+          <div style={styles.bookingContainer}>
 
-      <div style={styles.bookingHeading}>
+            <div style={styles.bookingHeading}>
 
-        <p style={styles.sectionLabel}>
-          BOOK A SESSION
-        </p>
+              <p style={styles.sectionLabel}>
+                BOOK A SESSION
+              </p>
 
-        <h2 style={styles.bookingTitle}>
-          Let&apos;s Discuss Your Property Needs
-        </h2>
+              <h2 style={styles.bookingTitle}>
+                Let&apos;s Discuss Your Property Needs
+              </h2>
 
-        <p style={styles.bookingText}>
-          Schedule a consultation with Rigour Estate &
-          Construction to discuss your property,
-          construction, renovation, land, or investment
-          needs.
-        </p>
+              <p style={styles.bookingText}>
+                Schedule a consultation with Rigour Estate &
+                Construction to discuss your property,
+                construction, renovation, land, or investment
+                needs.
+              </p>
 
-      </div>
+            </div>
 
-      <form
-        style={styles.bookingForm}
-        onSubmit={(e) => {
-          e.preventDefault();
+            <form
+              style={styles.bookingForm}
+              onSubmit={(e) => {
+                e.preventDefault();
 
-          const form = e.target;
+                const form = e.target;
 
-          const name = form.name.value;
-          const phone = form.phone.value;
-          const service = form.service.value;
-          const date = form.date.value;
-          const time = form.time.value;
-          const message = form.message.value;
+                const name = form.name.value;
+                const phone = form.phone.value;
+                const service = form.service.value;
+                const date = form.date.value;
+                const time = form.time.value;
+                const message = form.message.value;
 
-          const whatsappMessage =
-            `Hello Rigour Estate & Construction,%0A%0A` +
-            `I would like to book a consultation.%0A%0A` +
-            `Name: ${name}%0A` +
-            `Phone: ${phone}%0A` +
-            `Service: ${service}%0A` +
-            `Preferred Date: ${date}%0A` +
-            `Preferred Time: ${time}%0A` +
-            `Message: ${message}`;
+                const whatsappMessage =
+                  `Hello Rigour Estate & Construction,%0A%0A` +
+                  `I would like to book a consultation.%0A%0A` +
+                  `Name: ${name}%0A` +
+                  `Phone: ${phone}%0A` +
+                  `Service: ${service}%0A` +
+                  `Preferred Date: ${date}%0A` +
+                  `Preferred Time: ${time}%0A` +
+                  `Message: ${message}`;
 
-          window.open(
-            `https://wa.me/237652410607?text=${whatsappMessage}`,
-            "_blank"
-          );
-        }}
-      >
-
-        <div style={styles.bookingRow}>
-
-          <div style={styles.bookingField}>
-            <label>Name</label>
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Your full name"
-              required
-              style={styles.bookingInput}
-            />
-          </div>
-
-          <div style={styles.bookingField}>
-            <label>Phone Number</label>
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Your phone number"
-              required
-              style={styles.bookingInput}
-            />
-          </div>
-
-        </div>
-
-        <div style={styles.bookingRow}>
-
-          <div style={styles.bookingField}>
-            <label>Service</label>
-
-            <select
-              name="service"
-              required
-              style={styles.bookingInput}
+                window.open(
+                  `https://wa.me/237652410607?text=${whatsappMessage}`,
+                  "_blank"
+                );
+              }}
             >
-              <option value="">
-                Select a service
-              </option>
 
-              <option value="Property Purchase">
-                Property Purchase
-              </option>
+              <div
+                className="bookingRowResponsive"
+                style={styles.bookingRow}
+              >
 
-              <option value="Property Rental">
-                Property Rental
-              </option>
+                <div style={styles.bookingField}>
+                  <label>Name</label>
 
-              <option value="Land Purchase">
-                Land Purchase
-              </option>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                    style={styles.bookingInput}
+                  />
+                </div>
 
-              <option value="House Construction">
-                House Construction
-              </option>
+                <div style={styles.bookingField}>
+                  <label>Phone Number</label>
 
-              <option value="Renovation & Remodeling">
-                Renovation & Remodeling
-              </option>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Your phone number"
+                    required
+                    style={styles.bookingInput}
+                  />
+                </div>
 
-              <option value="Property Consultation">
-                Property Consultation
-              </option>
-            </select>
+              </div>
+
+              <div
+                className="bookingRowResponsive"
+                style={styles.bookingRow}
+              >
+
+                <div style={styles.bookingField}>
+                  <label>Service</label>
+
+                  <select
+                    name="service"
+                    required
+                    style={styles.bookingInput}
+                  >
+                    <option value="">
+                      Select a service
+                    </option>
+
+                    <option value="Property Purchase">
+                      Property Purchase
+                    </option>
+
+                    <option value="Property Rental">
+                      Property Rental
+                    </option>
+
+                    <option value="Land Purchase">
+                      Land Purchase
+                    </option>
+
+                    <option value="House Construction">
+                      House Construction
+                    </option>
+
+                    <option value="Renovation & Remodeling">
+                      Renovation & Remodeling
+                    </option>
+
+                    <option value="Property Consultation">
+                      Property Consultation
+                    </option>
+                  </select>
+                </div>
+
+                <div style={styles.bookingField}>
+                  <label>Preferred Date</label>
+
+                  <input
+                    type="date"
+                    name="date"
+                    required
+                    style={styles.bookingInput}
+                  />
+                </div>
+
+              </div>
+
+              <div style={styles.bookingField}>
+                <label>Preferred Time</label>
+
+                <input
+                  type="time"
+                  name="time"
+                  required
+                  style={styles.bookingInput}
+                />
+              </div>
+
+              <div style={styles.bookingField}>
+                <label>Additional Message</label>
+
+                <textarea
+                  name="message"
+                  placeholder="Tell us briefly what you need..."
+                  rows="5"
+                  style={styles.bookingTextarea}
+                />
+              </div>
+
+              <button
+                type="submit"
+                style={styles.bookingButton}
+              >
+                Book a Consultation on WhatsApp
+              </button>
+
+            </form>
+
           </div>
 
-          <div style={styles.bookingField}>
-            <label>Preferred Date</label>
+        </div>
 
-            <input
-              type="date"
-              name="date"
-              required
-              style={styles.bookingInput}
-            />
-          </div>
+      </section>
+
+      {/* =========================
+          CTA
+      ========================= */}
+      <section style={styles.cta}>
+
+        <div style={styles.ctaContent}>
+
+          <h2 style={styles.ctaTitle}>
+            Ready to Build Your Future?
+          </h2>
+
+          <p style={styles.ctaText}>
+            Let Rigour Estate & Construction help turn your
+            property vision into reality.
+          </p>
+
+          <a
+            href="#booking"
+            style={styles.primaryButton}
+          >
+            Book a Consultation
+          </a>
 
         </div>
 
-        <div style={styles.bookingField}>
-          <label>Preferred Time</label>
+      </section>
 
-          <input
-            type="time"
-            name="time"
-            required
-            style={styles.bookingInput}
-          />
+      {/* =========================
+          CONTACT
+      ========================= */}
+      <section id="contact" style={styles.contact}>
+
+        <div style={styles.aboutContainer}>
+
+          <p style={styles.sectionLabel}>
+            GET IN TOUCH
+          </p>
+
+          <h2 style={styles.sectionTitle}>
+            Contact Rigour Estate & Construction
+          </h2>
+
         </div>
 
-        <div style={styles.bookingField}>
-          <label>Additional Message</label>
-
-          <textarea
-            name="message"
-            placeholder="Tell us briefly what you need..."
-            rows="5"
-            style={styles.bookingTextarea}
-          />
-        </div>
-
-        <button
-          type="submit"
-          style={styles.bookingButton}
+        <div
+          className="contactGridResponsive"
+          style={styles.contactGrid}
         >
-          Book a Consultation on WhatsApp
-        </button>
 
-      </form>
+          <div style={styles.contactCard}>
 
-    </div>
+            <div style={styles.contactIcon}>
+              📞
+            </div>
 
-  </div>
+            <h3 style={styles.contactTitle}>
+              Phone
+            </h3>
 
-</section>
-
-
-{/* =========================
-    CTA
-========================= */}
-<section style={styles.cta}>
-
-  <div style={styles.ctaContent}>
-
-    <h2 style={styles.ctaTitle}>
-      Ready to Build Your Future?
-    </h2>
-
-    <p style={styles.ctaText}>
-      Let Rigour Estate & Construction help turn your
-      property vision into reality.
-    </p>
-
-    <a
-      href="#booking"
-      style={styles.primaryButton}
-    >
-      Book a Consultation
-    </a>
-
-  </div>
-
-</section>
-
-
-{/* =========================
-    CONTACT
-========================= */}
-<section id="contact" style={styles.contact}>
-
-  <div style={styles.aboutContainer}>
-
-    <p style={styles.sectionLabel}>
-      GET IN TOUCH
-    </p>
-
-    <h2 style={styles.sectionTitle}>
-      Contact Rigour Estate & Construction
-    </h2>
-
-  </div>
-
-  <div style={styles.contactGrid}>
-
-    <div style={styles.contactCard}>
-
-      <div style={styles.contactIcon}>
-        📞
-      </div>
-
-      <h3 style={styles.contactTitle}>
-        Phone
-      </h3>
-
-      <a
-        href="tel:+237652410607"
-        style={styles.contactLink}
-      >
-        +237 6 52 41 06 07
-      </a>
-
-    </div>
-
-
-    <div style={styles.contactCard}>
-
-      <div style={styles.contactIcon}>
-        💬
-      </div>
-
-      <h3 style={styles.contactTitle}>
-        WhatsApp
-      </h3>
-
-      <a
-        href="https://wa.me/237652410607"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={styles.contactLink}
-      >
-        Chat with us
-      </a>
-
-    </div>
-
-
-    <div style={styles.contactCard}>
-
-      <div style={styles.contactIcon}>
-        ✉️
-      </div>
-
-      <h3 style={styles.contactTitle}>
-        Email
-      </h3>
-
-      <a
-        href="mailto:rigourestateandconstruction@gmail.com"
-        style={styles.contactLink}
-      >
-        rigourestateandconstruction@gmail.com
-      </a>
-
-    </div>
-
-
-    <div style={styles.contactCard}>
-
-      <div style={styles.contactIcon}>
-        📍
-      </div>
-
-      <h3 style={styles.contactTitle}>
-        Location
-      </h3>
-
-      <p>
-        Karata, Limbe, Cameroon
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-{/* =========================
-    FOOTER
-========================= */}
-<footer style={styles.footer}>
-<img
-src="/images/logo2.jpg"
-alt="Rigour Estate & Construction"
-style={{
-  width: "100px",
-  height: "100px",
-  objectFit: "contain",
-  borderRadius: "20%",
-  marginBottom: "15px",
-}
-}
-/>
-  <p style={styles.footerText}>
-    © {new Date().getFullYear()} Rigour Estate &
-    Construction. All Rights Reserved.
-  </p>
-
-</footer>
-
-
-{/* =========================
-    PROJECT IMAGE LIGHTBOX
-========================= */}
-{selectedProjectImage && (
-
-  <div
-    style={styles.lightbox}
-    onClick={() => setSelectedProjectImage(null)}
-  >
-
-    <button
-      onClick={() => setSelectedProjectImage(null)}
-      style={styles.closeButton}
-    >
-      ✕
-    </button>
-
-    <img
-      src={selectedProjectImage}
-      alt="Rigour project"
-      style={styles.lightboxImage}
-      onClick={(e) => e.stopPropagation()}
-    />
-
-  </div>
-
-)}
-
-
-{/* =========================
-    MOVING PROPERTY CSS
-========================= */}
-<style jsx>{`
-
-  @keyframes propertyMove {
-
-    from {
-      transform: translateX(-50%);
-    }
-
-    to {
-      transform: translateX(0);
-    }
-
-  }
-
-  .property-track {
-
-    display: flex;
-    gap: 25px;
-    width: max-content;
-    animation: propertyMove 35s linear infinite;
-
-  }
-
-  .property-track:hover {
-    animation-play-state: paused;
-  }
-
-  @media (max-width: 768px) {
-
-    .property-track {
-      animation-duration: 28s;
-    }
-
-  }
-
-`}</style>
-
-</main>
+            <a
+              href="tel:+237652410607"
+              style={styles.contactLink}
+            >
+              +237 6 52 41 06 07
+            </a>
+
+          </div>
+
+          <div style={styles.contactCard}>
+
+            <div style={styles.contactIcon}>
+              💬
+            </div>
+
+            <h3 style={styles.contactTitle}>
+              WhatsApp
+            </h3>
+
+            <a
+              href="https://wa.me/237652410607"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.contactLink}
+            >
+              Chat with us
+            </a>
+
+          </div>
+
+          <div style={styles.contactCard}>
+
+            <div style={styles.contactIcon}>
+              ✉️
+            </div>
+
+            <h3 style={styles.contactTitle}>
+              Email
+            </h3>
+
+            <a
+              href="mailto:rigourestateandconstruction@gmail.com"
+              style={styles.contactLink}
+            >
+              rigourestateandconstruction@gmail.com
+            </a>
+
+          </div>
+
+          <div style={styles.contactCard}>
+
+            <div style={styles.contactIcon}>
+              📍
+            </div>
+
+            <h3 style={styles.contactTitle}>
+              Location
+            </h3>
+
+            <p>
+              Karata, Limbe, Cameroon
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
+          FOOTER
+      ========================= */}
+      <footer style={styles.footer}>
+
+        <img
+          src="/images/logo2.jpg"
+          alt="Rigour Estate & Construction"
+          style={{
+            width: "100px",
+            height: "100px",
+            objectFit: "contain",
+            borderRadius: "20%",
+            marginBottom: "15px",
+          }}
+        />
+
+        <p style={styles.footerText}>
+          © {new Date().getFullYear()} Rigour Estate &
+          Construction. All Rights Reserved.
+        </p>
+
+      </footer>
+
+      {/* =========================
+          PROJECT IMAGE LIGHTBOX
+      ========================= */}
+      {selectedProjectImage && (
+
+        <div
+          style={styles.lightbox}
+          onClick={() => setSelectedProjectImage(null)}
+        >
+
+          <button
+            onClick={() => setSelectedProjectImage(null)}
+            style={styles.closeButton}
+            aria-label="Close image"
+          >
+            ✕
+          </button>
+
+          <img
+            src={selectedProjectImage}
+            alt="Rigour project"
+            style={styles.lightboxImage}
+            onClick={(e) => e.stopPropagation()}
+          />
+
+        </div>
+
+      )}
+
+      {/* =========================
+          RESPONSIVE + PROPERTY CSS
+      ========================= */}
+      <style jsx>{`
+
+        * {
+          box-sizing: border-box;
+        }
+
+        html,
+        body {
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+
+        @keyframes propertyMove {
+          from {
+            transform: translateX(-50%);
+          }
+
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        .property-track {
+          display: flex;
+          gap: 25px;
+          width: max-content;
+          animation: propertyMove 35s linear infinite;
+        }
+
+        .property-track:hover {
+          animation-play-state: paused;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1024px) {
+
+          .navLinksResponsive {
+            gap: 15px !important;
+          }
+
+          .navLinksResponsive a {
+            font-size: 13px !important;
+          }
+
+          .cardGridResponsive {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
+          .contactGridResponsive {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
+          .projectsGridResponsive {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
+          .servicesGridResponsive {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
+          .heroTitle {
+            font-size: 48px !important;
+          }
+
+          .propertyCardResponsive {
+            width: 320px !important;
+          }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+          .navLinksResponsive {
+            display: none !important;
+          }
+
+          .menuButtonResponsive {
+            display: block !important;
+          }
+
+          .mobileMenuResponsive {
+            display: flex !important;
+          }
+
+          .heroTitle {
+            font-size: clamp(36px, 10vw, 48px) !important;
+            line-height: 1.08 !important;
+            letter-spacing: 0 !important;
+          }
+
+          .heroBrand {
+            font-size: 14px !important;
+            letter-spacing: 2px !important;
+          }
+
+          .heroText {
+            font-size: 16px !important;
+            line-height: 1.6 !important;
+          }
+
+          .heroButtons {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            width: 100% !important;
+            max-width: 350px !important;
+            margin: 0 auto !important;
+          }
+
+          .heroButtons a {
+            width: 100% !important;
+            text-align: center !important;
+          }
+
+          .cardGridResponsive {
+            grid-template-columns: 1fr !important;
+            width: 100% !important;
+          }
+
+          .servicesGridResponsive {
+            grid-template-columns: 1fr !important;
+          }
+
+          .projectsGridResponsive {
+            grid-template-columns: 1fr !important;
+          }
+
+          .contactGridResponsive {
+            grid-template-columns: 1fr !important;
+          }
+
+          .valuesRowResponsive {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+
+          .valuesRowResponsive > div {
+            width: 100% !important;
+          }
+
+          .bookingRowResponsive {
+            grid-template-columns: 1fr !important;
+          }
+
+          .bookingForm {
+            padding: 22px !important;
+          }
+
+          .bookingTitle {
+            font-size: 30px !important;
+          }
+
+          .bookingText {
+            font-size: 15px !important;
+          }
+
+          .sectionTitle {
+            font-size: 30px !important;
+            line-height: 1.2 !important;
+          }
+
+          .sectionTitleWhite {
+            font-size: 30px !important;
+            line-height: 1.2 !important;
+          }
+
+          .propertyViewportResponsive {
+            width: 100% !important;
+          }
+
+          .propertyCardResponsive {
+            width: min(82vw, 330px) !important;
+          }
+
+          .propertyImage {
+            height: 210px !important;
+          }
+
+          .propertyVideo {
+            max-height: 220px !important;
+          }
+
+          .propertyContent {
+            padding: 16px !important;
+          }
+
+          .propertyName {
+            font-size: 20px !important;
+          }
+
+          .ctaTitle {
+            font-size: 30px !important;
+          }
+
+          .ctaText {
+            font-size: 16px !important;
+            line-height: 1.6 !important;
+          }
+
+          .contactCard {
+            padding: 22px !important;
+          }
+
+          .lightboxImage {
+            max-width: 94vw !important;
+            max-height: 80vh !important;
+          }
+
+          .property-track {
+            animation-duration: 28s;
+          }
+        }
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 480px) {
+
+          .navbar {
+            padding: 10px 15px !important;
+          }
+
+          .logoImage {
+            width: 62px !important;
+            height: 62px !important;
+          }
+
+          .logoText {
+            font-size: 14px !important;
+            line-height: 1.2 !important;
+          }
+
+          .logoText span {
+            font-size: 7px !important;
+            letter-spacing: 0.5px !important;
+          }
+
+          .menuButtonResponsive {
+            font-size: 25px !important;
+          }
+
+          .mobileMenuResponsive {
+            width: 210px !important;
+            top: 72px !important;
+          }
+
+          .hero {
+            min-height: 650px !important;
+            padding: 55px 18px !important;
+          }
+
+          .heroTitle {
+            font-size: 35px !important;
+          }
+
+          .heroBrand {
+            font-size: 12px !important;
+            letter-spacing: 1.5px !important;
+          }
+
+          .heroText {
+            font-size: 15px !important;
+          }
+
+          .about,
+          .whatWeDo,
+          .services,
+          .projects,
+          .properties,
+          .contact {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+          }
+
+          .about {
+            padding-top: 65px !important;
+            padding-bottom: 65px !important;
+          }
+
+          .whatWeDo {
+            padding-top: 65px !important;
+            padding-bottom: 65px !important;
+          }
+
+          .services {
+            padding-top: 65px !important;
+            padding-bottom: 65px !important;
+          }
+
+          .projects {
+            padding-top: 65px !important;
+            padding-bottom: 65px !important;
+          }
+
+          .properties {
+            padding-top: 65px !important;
+            padding-bottom: 65px !important;
+          }
+
+          .contact {
+            padding-top: 65px !important;
+            padding-bottom: 65px !important;
+          }
+
+          .cardImage {
+            height: 210px !important;
+          }
+
+          .projectImage {
+            height: 230px !important;
+          }
+
+          .propertyCardResponsive {
+            width: 82vw !important;
+          }
+
+          .booking {
+            padding: 65px 15px !important;
+          }
+
+          .bookingForm {
+            padding: 18px !important;
+            border-radius: 10px !important;
+          }
+
+          .bookingInput,
+          .bookingTextarea {
+            font-size: 16px !important;
+          }
+
+          .bookingButton {
+            font-size: 14px !important;
+            line-height: 1.4 !important;
+          }
+
+          .cta {
+            padding: 70px 18px !important;
+          }
+
+          .footer {
+            padding: 25px 15px !important;
+          }
+        }
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================= */
+
+        @media (max-width: 360px) {
+
+          .logoImage {
+            width: 52px !important;
+            height: 52px !important;
+          }
+
+          .logoText {
+            font-size: 12px !important;
+          }
+
+          .logoText span {
+            font-size: 6px !important;
+          }
+
+          .heroTitle {
+            font-size: 31px !important;
+          }
+
+          .heroBrand {
+            font-size: 11px !important;
+          }
+
+          .propertyCardResponsive {
+            width: 84vw !important;
+          }
+
+          .sectionTitle,
+          .sectionTitleWhite {
+            font-size: 27px !important;
+          }
+        }
+
+      `}</style>
+
+    </main>
   );
 }
 
@@ -1018,6 +1450,10 @@ const styles = {
 
   page: {
     margin: 0,
+    padding: 0,
+    width: "100%",
+    maxWidth: "100%",
+    overflowX: "hidden",
     background: "#f7f5f0",
     color: "#222222",
     fontFamily: "Arial, Helvetica, sans-serif",
@@ -1030,12 +1466,13 @@ const styles = {
     position: "sticky",
     top: 0,
     zIndex: 100,
+    width: "100%",
     background: "#111111",
     color: "#ffffff",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "15px 6%",
+    padding: "12px 5%",
     boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
   },
 
@@ -1043,23 +1480,27 @@ const styles = {
     display: "flex",
     alignItems: "center",
     gap: "10px",
+    minWidth: 0,
   },
 
   logoImage: {
-    width: "90px",
-    height: "90px",
+    width: "75px",
+    height: "75px",
     objectFit: "contain",
+    flexShrink: 0,
   },
 
   logoText: {
     fontSize: "18px",
     fontWeight: "700",
     letterSpacing: "1px",
+    lineHeight: "1.2",
+    whiteSpace: "nowrap",
   },
 
   navLinks: {
     display: "flex",
-    gap: "25px",
+    gap: "22px",
     alignItems: "center",
   },
 
@@ -1068,6 +1509,7 @@ const styles = {
     textDecoration: "none",
     fontSize: "15px",
     fontWeight: "600",
+    whiteSpace: "nowrap",
   },
 
   menuButton: {
@@ -1077,18 +1519,21 @@ const styles = {
     color: "#ffffff",
     fontSize: "28px",
     cursor: "pointer",
+    padding: "5px",
+    flexShrink: 0,
   },
 
   mobileMenu: {
     position: "fixed",
-    top: "85px",
+    top: "78px",
     right: 0,
     width: "230px",
+    maxWidth: "85vw",
     background: "#111111",
     zIndex: 99,
     display: "flex",
     flexDirection: "column",
-    padding: "20px",
+    padding: "15px 20px",
     boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
   },
 
@@ -1097,6 +1542,7 @@ const styles = {
     textDecoration: "none",
     padding: "14px 5px",
     borderBottom: "1px solid #333333",
+    fontSize: "15px",
   },
 
 
@@ -1104,26 +1550,22 @@ const styles = {
 
   hero: {
     minHeight: "85vh",
-
+    width: "100%",
     backgroundImage:
-      "linear-gradient(rgba(34, 32, 32, 0.95), rgba(18, 18, 19, 0.68)), url('/images/hero-background.jpg')",
-
+      "linear-gradient(rgba(34, 32, 32, 0.95), rgba(18, 18, 19, 0.68)),url('/images/hero-background.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
-
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-
     textAlign: "center",
-
     color: "#ffffff",
-
     padding: "70px 20px",
   },
 
   heroContent: {
     maxWidth: "950px",
+    width: "100%",
   },
 
   heroBrand: {
@@ -1190,6 +1632,7 @@ const styles = {
 
   aboutContainer: {
     maxWidth: "1000px",
+    width: "100%",
     margin: "auto",
     textAlign: "center",
   },
@@ -1205,12 +1648,14 @@ const styles = {
 
   sectionTitle: {
     fontSize: "38px",
+    lineHeight: "1.2",
     margin: "0 0 20px",
     color: "#171717",
   },
 
   sectionTitleWhite: {
     fontSize: "38px",
+    lineHeight: "1.2",
     margin: "0 0 20px",
     color: "#ffffff",
   },
@@ -1252,13 +1697,15 @@ const styles = {
 
   cardGrid: {
     maxWidth: "1200px",
+    width: "100%",
     margin: "40px auto 0",
     display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
+    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
     gap: "22px",
   },
 
   imageCard: {
+    minWidth: 0,
     background: "#ffffff",
     borderRadius: "12px",
     overflow: "hidden",
@@ -1292,13 +1739,15 @@ const styles = {
 
   servicesGrid: {
     maxWidth: "1100px",
+    width: "100%",
     margin: "40px auto 0",
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
     gap: "25px",
   },
 
   serviceCard: {
+    minWidth: 0,
     padding: "30px",
     border: "1px solid #444444",
     borderRadius: "10px",
@@ -1322,6 +1771,7 @@ const styles = {
 
   projectsContainer: {
     maxWidth: "1200px",
+    width: "100%",
     margin: "auto",
   },
 
@@ -1332,12 +1782,13 @@ const styles = {
 
   projectsGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
     gap: "25px",
     marginTop: "40px",
   },
 
   projectCard: {
+    minWidth: 0,
     background: "#ffffff",
     borderRadius: "12px",
     overflow: "hidden",
@@ -1366,16 +1817,19 @@ const styles = {
     padding: "85px 20px",
     background: "#ebe4d6",
     overflow: "hidden",
+    width: "100%",
   },
 
   propertyViewport: {
     maxWidth: "1200px",
+    width: "100%",
     margin: "40px auto 0",
     overflow: "hidden",
   },
 
   propertyCard: {
     width: "350px",
+    maxWidth: "90vw",
     flexShrink: 0,
     background: "#ffffff",
     borderRadius: "12px",
@@ -1438,13 +1892,10 @@ const styles = {
 
   booking: {
     padding: "90px 20px",
-
     backgroundImage:
       "linear-gradient(rgba(17, 17, 17, 0.82), rgba(27, 26, 26, 0.9)), url('/images/hero-background.jpg')",
-
     backgroundSize: "cover",
     backgroundPosition: "center",
-
     color: "#ffffff",
   },
 
@@ -1454,6 +1905,7 @@ const styles = {
 
   bookingContainer: {
     maxWidth: "900px",
+    width: "100%",
     margin: "auto",
   },
 
@@ -1464,6 +1916,7 @@ const styles = {
 
   bookingTitle: {
     fontSize: "40px",
+    lineHeight: "1.2",
     margin: "10px 0 15px",
     color: "#ffffff",
   },
@@ -1482,6 +1935,7 @@ const styles = {
     borderRadius: "14px",
     boxShadow: "0 15px 45px rgba(0,0,0,0.25)",
     color: "#171717",
+    width: "100%",
   },
 
   bookingRow: {
@@ -1495,10 +1949,12 @@ const styles = {
     flexDirection: "column",
     gap: "8px",
     marginBottom: "20px",
+    minWidth: 0,
   },
 
   bookingInput: {
     width: "100%",
+    maxWidth: "100%",
     boxSizing: "border-box",
     padding: "14px",
     border: "1px solid #d5d5d5",
@@ -1510,6 +1966,7 @@ const styles = {
 
   bookingTextarea: {
     width: "100%",
+    maxWidth: "100%",
     boxSizing: "border-box",
     padding: "14px",
     border: "1px solid #d5d5d5",
@@ -1538,29 +1995,29 @@ const styles = {
 
   cta: {
     padding: "100px 20px",
-
     backgroundImage:
       "linear-gradient(rgba(22, 21, 22, 0.95), rgba(19, 19, 20, 0.72)), url('/images/hero-background.jpg')",
-
     backgroundSize: "cover",
     backgroundPosition: "center",
-
     color: "#ffffff",
     textAlign: "center",
   },
 
   ctaContent: {
     maxWidth: "800px",
+    width: "100%",
     margin: "auto",
   },
 
   ctaTitle: {
     fontSize: "40px",
+    lineHeight: "1.2",
     marginBottom: "15px",
   },
 
   ctaText: {
     fontSize: "18px",
+    lineHeight: "1.7",
     marginBottom: "30px",
   },
 
@@ -1574,18 +2031,21 @@ const styles = {
 
   contactGrid: {
     maxWidth: "1100px",
+    width: "100%",
     margin: "40px auto 0",
     display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
+    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
     gap: "20px",
   },
 
   contactCard: {
+    minWidth: 0,
     padding: "25px",
     background: "#c8e2d3",
     borderRadius: "10px",
     textAlign: "center",
     boxShadow: "0 5px 18px rgba(0,0,0,0.05)",
+    overflowWrap: "anywhere",
   },
 
   contactIcon: {
@@ -1612,6 +2072,7 @@ const styles = {
     color: "#ffffff",
     padding: "30px 20px",
     textAlign: "center",
+    width: "100%",
   },
 
   footerText: {
@@ -1641,6 +2102,8 @@ const styles = {
   lightboxImage: {
     maxWidth: "95%",
     maxHeight: "90%",
+    width: "auto",
+    height: "auto",
     objectFit: "contain",
   },
 
@@ -1653,5 +2116,6 @@ const styles = {
     color: "#ffffff",
     fontSize: "32px",
     cursor: "pointer",
+    zIndex: 1001,
   },
 };
