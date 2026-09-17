@@ -45,364 +45,384 @@ export default function Home() {
   return (
     <main style={styles.page}>
 
-      {/* =========================
-          NAVBAR
-      ========================= */}
+      {/* ================= NAVBAR ================= */}
       <nav style={styles.navbar}>
+        <div style={styles.navContainer}>
 
-        <div style={styles.logo}>
-          <img
-            src="/logo.jpg"
-            alt="Rigour Estate & Construction"
-            style={styles.logoImage}
-          />
+          <div style={styles.logo}>
+            <img
+              src="/logo.jpg"
+              alt="Rigour Estate & Construction"
+              style={styles.logoImage}
+            />
 
-          <div style={styles.logoText}>
-            RIGOUR
-            <br />
-            <span>ESTATE & CONSTRUCTION</span>
+            <div style={styles.logoText}>
+              RIGOUR
+              <br />
+              <span>ESTATE & CONSTRUCTION</span>
+            </div>
           </div>
-        </div>
 
-        <div
-          className="navLinksResponsive"
-          style={styles.navLinks}
-        >
-          <a
-            href="#home"
-            style={styles.navLink}
-            onClick={closeMobileMenu}
+          <div
+            className="navLinksResponsive"
+            style={styles.navLinks}
           >
-            Home
-          </a>
+            <a href="#home" style={styles.navLink}>
+              Home
+            </a>
 
-          <a
-            href="#about"
-            style={styles.navLink}
-            onClick={closeMobileMenu}
-          >
-            About
-          </a>
+            <a href="#about" style={styles.navLink}>
+              About
+            </a>
 
-          <a
-            href="#services"
-            style={styles.navLink}
-            onClick={closeMobileMenu}
-          >
-            Services
-          </a>
+            <a href="#services" style={styles.navLink}>
+              Services
+            </a>
 
-          <a
-            href="#projects"
-            style={styles.navLink}
-            onClick={closeMobileMenu}
-          >
-            Projects
-          </a>
+            <a href="#projects" style={styles.navLink}>
+              Projects
+            </a>
 
-          <a
-            href="#properties"
-            style={styles.navLink}
-            onClick={closeMobileMenu}
-          >
-            Properties
-          </a>
+            <a href="/properties" style={styles.navLink}>
+              Properties
+            </a>
 
-          <a
-            href="#contact"
-            style={styles.navLink}
-            onClick={closeMobileMenu}
-          >
-            Contact
-          </a>
-        </div>
-
-        <button
-          className="menuButtonResponsive"
-          onClick={() => setMenuOpen(!menuOpen)}
-          style={styles.menuButton}
-          aria-label="Open navigation menu"
-        >
-          ☰
-        </button>
-      </nav>
-
-      {menuOpen && (
-        <div
-          className="mobileMenuResponsive"
-          style={styles.mobileMenu}
-        >
-          <a
-            href="#home"
-            style={styles.mobileLink}
-            onClick={closeMobileMenu}
-          >
-            Home
-          </a>
-
-          <a
-            href="#about"
-            style={styles.mobileLink}
-            onClick={closeMobileMenu}
-          >
-            About
-          </a>
-
-          <a
-            href="#services"
-            style={styles.mobileLink}
-            onClick={closeMobileMenu}
-          >
-            Services
-          </a>
-
-          <a
-            href="#projects"
-            style={styles.mobileLink}
-            onClick={closeMobileMenu}
-          >
-            Projects
-          </a>
-
-          <a
-            href="#properties"
-            style={styles.mobileLink}
-            onClick={closeMobileMenu}
-          >
-            Properties
-          </a>
-
-          <a
-            href="#contact"
-            style={styles.mobileLink}
-            onClick={closeMobileMenu}
-          >
-            Contact
-          </a>
-        </div>
-      )}
-
-      {/* =========================
-          HERO
-      ========================= */}
-      <section id="home" style={styles.hero}>
-
-        <div style={styles.heroContent}>
-
-          <p style={styles.heroBrand}>
-            RIGOUR ESTATE & CONSTRUCTION
-          </p>
-
-          <h1 style={styles.heroTitle}>
-            Building Legacies,
-            <br />
-            One Brick at a Time.
-          </h1>
-
-          <p style={styles.heroText}>
-            Building quality spaces, developing valuable properties,
-            and creating lasting legacies.
-          </p>
-
-          <div style={styles.heroButtons}>
+            <a href="#contact" style={styles.navLink}>
+              Contact
+            </a>
 
             <a
-              href="#contact"
-              style={styles.primaryButton}
+              href="https://wa.me/237652080691"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navWhatsAppResponsive"
+              style={styles.navWhatsApp}
             >
-              Contact Us
+              WhatsApp
+            </a>
+          </div>
+
+          <button
+            className="menuButtonResponsive"
+            style={styles.menuButton}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+
+        {menuOpen && (
+          <div
+            className="mobileMenuResponsive"
+            style={styles.mobileMenu}
+          >
+            <a
+              href="#home"
+              style={styles.mobileLink}
+              onClick={closeMobileMenu}
+            >
+              Home
             </a>
 
             <a
               href="#about"
-              style={styles.secondaryButton}
+              style={styles.mobileLink}
+              onClick={closeMobileMenu}
             >
-              Learn More
+              About
             </a>
 
-          </div>
+            <a
+              href="#services"
+              style={styles.mobileLink}
+              onClick={closeMobileMenu}
+            >
+              Services
+            </a>
 
+            <a
+              href="#projects"
+              style={styles.mobileLink}
+              onClick={closeMobileMenu}
+            >
+              Projects
+            </a>
+
+            <a
+              href="/properties"
+              style={styles.mobileLink}
+              onClick={closeMobileMenu}
+            >
+              Properties
+            </a>
+
+            <a
+              href="#contact"
+              style={styles.mobileLink}
+              onClick={closeMobileMenu}
+            >
+              Contact
+            </a>
+
+            <a
+              href="https://wa.me/237652080691"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.mobileWhatsApp}
+              onClick={closeMobileMenu}
+            >
+              WhatsApp
+            </a>
+          </div>
+        )}
+      </nav>
+
+
+      {/* ================= HERO ================= */}
+      <section
+        id="home"
+        style={styles.hero}
+      >
+        <div style={styles.heroOverlay}>
+          <div style={styles.heroContent}>
+
+            <p style={styles.heroLabel}>
+              RIGOUR ESTATE & CONSTRUCTION
+            </p>
+
+            <h1 style={styles.heroTitle}>
+              Building Legacies,
+              <br />
+              One Brick at a Time.
+            </h1>
+
+            <p style={styles.heroText}>
+              Building quality spaces, developing valuable properties,
+              and creating lasting legacies.
+            </p>
+
+            <div style={styles.heroButtons}>
+              <a
+                href="#contact"
+                style={styles.primaryButton}
+              >
+                Contact Us
+              </a>
+
+              <a
+                href="#about"
+                style={styles.secondaryButton}
+              >
+                Learn More
+              </a>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* =========================
-          INTRODUCTION
-      ========================= */}
-      <section id="about" style={styles.about}>
 
+      {/* ================= ABOUT ================= */}
+      <section
+        id="about"
+        style={styles.about}
+      >
         <div style={styles.aboutContainer}>
 
           <p style={styles.sectionLabel}>
-            WHO WE ARE
+            ABOUT US
           </p>
 
           <h2 style={styles.sectionTitle}>
-            Rigour Estate & Construction
+            Building With Purpose
           </h2>
 
-          <p style={styles.sectionText}>
-            Rigour Estate & Construction is a real estate and
-            construction company committed to delivering quality
-            properties, reliable construction services, and
-            practical property solutions.
-          </p>
-
-          <p style={styles.sectionText}>
-            From property development and land acquisition to
-            construction, renovation, and property solutions,
-            we focus on quality, precision, and reliability in
-            every project we undertake.
+          <p style={styles.aboutText}>
+            Rigour Estate & Construction is committed to delivering
+            quality construction, reliable property solutions, and
+            professional services designed to meet the needs of our
+            clients.
           </p>
 
           <div
-            className="valuesRowResponsive"
-            style={styles.valuesRow}
+            className="valuesGridResponsive"
+            style={styles.valuesGrid}
           >
 
             <div style={styles.valueCard}>
-              <h3 style={styles.valueTitle}>
-                Quality
-              </h3>
-
+              <div style={styles.valueIcon}>01</div>
+              <h3>Quality</h3>
               <p>
-                We are committed to delivering work that meets
-                high standards.
+                We focus on quality materials, workmanship, and
+                reliable results.
               </p>
             </div>
 
             <div style={styles.valueCard}>
-              <h3 style={styles.valueTitle}>
-                Precision
-              </h3>
-
+              <div style={styles.valueIcon}>02</div>
+              <h3>Precision</h3>
               <p>
-                We pay attention to the details that make every
-                project successful.
+                Every project is approached with attention to
+                detail and careful planning.
               </p>
             </div>
 
             <div style={styles.valueCard}>
-              <h3 style={styles.valueTitle}>
-                Reliability
-              </h3>
-
+              <div style={styles.valueIcon}>03</div>
+              <h3>Reliability</h3>
               <p>
-                We work to build trust through dependable service
-                and professional results.
+                We aim to provide dependable services and lasting
+                value to our clients.
               </p>
             </div>
 
           </div>
-
         </div>
       </section>
 
-      {/* =========================
-          WHAT WE DO BEST
-      ========================= */}
-      <section style={styles.whatWeDo}>
 
+      {/* ================= WHAT WE DO BEST ================= */}
+      <section
+        id="solutions"
+        style={styles.whatWeDo}
+      >
         <div style={styles.aboutContainer}>
 
           <p style={styles.sectionLabel}>
-            WHAT WE DO BEST
+            PROPERTY & CONSTRUCTION SOLUTIONS
           </p>
 
           <h2 style={styles.sectionTitle}>
-            Property & Construction Solutions
+            What We Do Best
           </h2>
 
-        </div>
+          <p style={styles.projectIntro}>
+            Professional property and construction solutions designed
+            to help you find, develop, build, and improve quality spaces.
+          </p>
 
-        <div
-          className="cardGridResponsive"
-          style={styles.cardGrid}
-        >
+          <div
+            className="solutionsGridResponsive"
+            style={styles.solutionsGrid}
+          >
 
-          <div style={styles.imageCard}>
-            <img
-              src="/images/buy-home.jpg"
-              alt="Buy a home with Rigour Estate & Construction"
-              style={styles.cardImage}
-            />
+            {/* BUY A HOME */}
+            <div style={styles.solutionCard}>
+              <img
+                src="/images/buy-home.jpg"
+                alt="Buy a Home"
+                style={styles.solutionImage}
+              />
 
-            <div style={styles.cardContent}>
-              <h3 style={styles.cardTitle}>
-                Buy a Home
-              </h3>
+              <div style={styles.solutionContent}>
+                <h3 style={styles.solutionTitle}>
+                  Buy a Home
+                </h3>
 
-              <p>
-                Find a property that suits your needs and
-                investment goals.
-              </p>
+                <p style={styles.solutionText}>
+                  Find a quality home that fits your needs,
+                  lifestyle, and future plans.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div style={styles.imageCard}>
-            <img
-              src="/images/rent-property.jpg"
-              alt="Rent a property"
-              style={styles.cardImage}
-            />
 
-            <div style={styles.cardContent}>
-              <h3 style={styles.cardTitle}>
-                Rent a Property
-              </h3>
+            {/* RENT A PROPERTY */}
+            <div style={styles.solutionCard}>
+              <img
+                src="/images/rent-property.jpg"
+                alt="Rent a Property"
+                style={styles.solutionImage}
+              />
 
-              <p>
-                Explore available properties for comfortable
-                living and business needs.
-              </p>
+              <div style={styles.solutionContent}>
+                <h3 style={styles.solutionTitle}>
+                  Rent a Property
+                </h3>
+
+                <p style={styles.solutionText}>
+                  Discover suitable rental properties in
+                  convenient and desirable locations.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div style={styles.imageCard}>
-            <img
-              src="/images/buy-land.jpg"
-              alt="Buy land"
-              style={styles.cardImage}
-            />
 
-            <div style={styles.cardContent}>
-              <h3 style={styles.cardTitle}>
-                Buy Land
-              </h3>
+            {/* BUY LAND */}
+            <div style={styles.solutionCard}>
+              <img
+                src="/images/buy-land.jpg"
+                alt="Buy Land"
+                style={styles.solutionImage}
+              />
 
-              <p>
-                Secure land for your future development or
-                investment.
-              </p>
+              <div style={styles.solutionContent}>
+                <h3 style={styles.solutionTitle}>
+                  Buy Land
+                </h3>
+
+                <p style={styles.solutionText}>
+                  Secure land for your home, investment,
+                  development, or future construction project.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div style={styles.imageCard}>
-            <img
-              src="/images/build-house.jpg"
-              alt="Build a house"
-              style={styles.cardImage}
-            />
 
-            <div style={styles.cardContent}>
-              <h3 style={styles.cardTitle}>
-                Build a House
-              </h3>
+            {/* BUILD A HOUSE */}
+            <div style={styles.solutionCard}>
+              <img
+                src="/images/build-house.jpg"
+                alt="Build a House"
+                style={styles.solutionImage}
+              />
 
-              <p>
-                Turn your construction vision into a quality
-                finished project.
-              </p>
+              <div style={styles.solutionContent}>
+                <h3 style={styles.solutionTitle}>
+                  Build a House
+                </h3>
+
+                <p style={styles.solutionText}>
+                  Turn your construction vision into a quality,
+                  functional, and lasting home.
+                </p>
+              </div>
             </div>
-          </div>
 
+
+            {/* ARCHITECTURAL DRAWINGS */}
+            <div style={styles.solutionCard}>
+
+              <img
+              src="/images/architectural-drawing.jpg"
+              alt="Architectural Drawings"
+              style={styles.architecturalSolutionPhoto}
+              />
+
+              <div style={styles.solutionContent}>
+                <h3 style={styles.solutionTitle}>
+                  Architectural Drawings
+                </h3>
+
+                <p style={styles.solutionText}>
+                  Bring your ideas to life with clear and
+                  professional architectural drawings designed
+                  for your construction needs.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* =========================
-          SERVICES
-      ========================= */}
-      <section id="services" style={styles.services}>
 
+      {/* ================= SERVICES ================= */}
+      <section
+        id="services"
+        style={styles.services}
+      >
         <div style={styles.aboutContainer}>
 
           <p style={styles.sectionLabel}>
@@ -415,6 +435,8 @@ export default function Home() {
 
         </div>
 
+
+        {/* ORIGINAL THREE SERVICE BOXES */}
         <div
           className="servicesGridResponsive"
           style={styles.servicesGrid}
@@ -426,10 +448,11 @@ export default function Home() {
             </h3>
 
             <p>
-              Professional construction services focused on
-              quality workmanship and reliable delivery.
+              Professional construction services focused on quality
+              workmanship and reliable delivery.
             </p>
           </div>
+
 
           <div style={styles.serviceCard}>
             <h3 style={styles.serviceTitle}>
@@ -441,6 +464,7 @@ export default function Home() {
               valuable and functional spaces.
             </p>
           </div>
+
 
           <div style={styles.serviceCard}>
             <h3 style={styles.serviceTitle}>
@@ -454,13 +478,61 @@ export default function Home() {
           </div>
 
         </div>
+
+
+        {/* TWO PROFESSIONAL SERVICE LISTS */}
+        <div
+          className="serviceListsResponsive"
+          style={styles.serviceLists}
+        >
+
+          {/* LEFT COLUMN */}
+          <div style={styles.serviceListColumn}>
+
+            <h3 style={styles.serviceListTitle}>
+              Real Estate
+            </h3>
+
+            <ul style={styles.serviceList}>
+              <li>Finding Properties</li>
+              <li>Renting Properties</li>
+              <li>Selling Properties</li>
+              <li>Buying Properties</li>
+              <li>Property Marketing</li>
+              <li>Property Inspections</li>
+              <li>Property Development</li>
+            </ul>
+
+          </div>
+
+
+          {/* RIGHT COLUMN */}
+          <div style={styles.serviceListColumn}>
+
+            <h3 style={styles.serviceListTitle}>
+              Construction & Engineering
+            </h3>
+
+            <ul style={styles.serviceList}>
+              <li>Building Construction</li>
+              <li>Civil Engineering Works</li>
+              <li>Structural Works</li>
+              <li>Renovation</li>
+              <li>Project Management</li>
+              <li>Construction Supervision</li>
+              <li>Architectural Drawings</li>
+            </ul>
+
+          </div>
+
+        </div>
+
       </section>
-
-      {/* =========================
-          FUTURE PROJECTS
-      ========================= */}
-      <section id="projects" style={styles.projects}>
-
+      {/* ================= FEATURED PROJECTS ================= */}
+      <section
+        id="projects"
+        style={styles.projects}
+      >
         <div style={styles.projectsContainer}>
 
           <p style={styles.sectionLabel}>
@@ -472,15 +544,16 @@ export default function Home() {
           </h2>
 
           <p style={styles.projectIntro}>
-            Quality, precision, and professionalism in every
-            project.
+            Quality, precision, and professionalism in every project.
           </p>
+
 
           <div
             className="projectsGridResponsive"
             style={styles.projectsGrid}
           >
 
+            {/* PROJECT 1 */}
             <div
               style={styles.projectCard}
               onClick={() =>
@@ -498,6 +571,8 @@ export default function Home() {
               </div>
             </div>
 
+
+            {/* PROJECT 2 */}
             <div
               style={styles.projectCard}
               onClick={() =>
@@ -515,6 +590,8 @@ export default function Home() {
               </div>
             </div>
 
+
+            {/* PROJECT 3 */}
             <div
               style={styles.projectCard}
               onClick={() =>
@@ -537,192 +614,214 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================
-          FEATURED PROPERTIES
-      ========================= */}
-      <section id="properties" style={styles.properties}>
 
-        <div style={styles.aboutContainer}>
+      {/* ================= FEATURED PROPERTIES ================= */}
+      <section
+        id="properties"
+        style={styles.properties}
+      >
+
+        <div style={styles.propertiesContainer}>
 
           <p style={styles.sectionLabel}>
-            AVAILABLE PROPERTIES
+            PROPERTY SHOWCASE
           </p>
 
           <h2 style={styles.sectionTitle}>
             Featured Properties
           </h2>
 
-          <p style={styles.sectionText}>
-            Explore some of our available properties.
+          <p style={styles.projectIntro}>
+            Explore some of our available properties and property
+            opportunities.
           </p>
 
-        </div>
 
-        {properties.length > 0 ? (
-          <div
-            className="propertyViewportResponsive"
-            style={styles.propertyViewport}
-          >
+          {properties.length > 0 ? (
 
-            <div className="property-track">
+            <div
+              className="propertyViewportResponsive"
+              style={styles.propertyViewport}
+            >
 
-              {[...properties, ...properties].map(
-                (property, index) => {
+              <div className="property-track">
 
-                  const firstImage =
-                    property.images &&
-                    property.images.length > 0
-                      ? getMediaUrl(property.images[0])
-                      : null;
+                {[...properties, ...properties].map(
+                  (property, index) => {
 
-                  return (
-                    <div
-                      key={`${property.id}-${index}`}
-                      className="propertyCardResponsive"
-                      style={styles.propertyCard}
-                    >
+                    const firstImage =
+                      property.images &&
+                      property.images.length > 0
+                        ? getMediaUrl(property.images[0])
+                        : null;
 
-                      {firstImage && (
-                        <img
-                          src={firstImage}
-                          alt={`${property.name || "Property"} - ${
-                            property.location || "Cameroon"
-                          }`}
-                          style={styles.propertyImage}
-                        />
-                      )}
+                    return (
+                      <div
+                        key={`${property.id}-${index}`}
+                        className="propertyCardResponsive"
+                        style={styles.propertyCard}
+                      >
 
-                      {property.videos &&
-                        property.videos.length > 0 && (
-                          <div>
-                            {property.videos.map(
-                              (video, videoIndex) => {
-
-                                const videoUrl =
-                                  getMediaUrl(video);
-
-                                return videoUrl ? (
-                                  <video
-                                    key={videoIndex}
-                                    src={videoUrl}
-                                    controls
-                                    playsInline
-                                    style={
-                                      styles.propertyVideo
-                                    }
-                                  />
-                                ) : null;
-                              }
-                            )}
-                          </div>
+                        {firstImage && (
+                          <img
+                            src={firstImage}
+                            alt={property.name || "Property"}
+                            style={styles.propertyImage}
+                          />
                         )}
 
-                      <div style={styles.propertyContent}>
 
-                        <h3 style={styles.propertyName}>
-                          {property.name || "Property"}
-                        </h3>
+                        {property.videos &&
+                          property.videos.length > 0 && (
+                            <div>
 
-                        <div style={styles.propertyDetails}>
+                              {property.videos.map(
+                                (video, videoIndex) => {
 
-                          <p>
-                            <strong>Location:</strong>{" "}
-                            {property.location || "Not specified"}
-                          </p>
+                                  const videoUrl =
+                                    getMediaUrl(video);
 
-                          <p>
-                            <strong>Price:</strong>{" "}
-                            {property.price || "Contact us"}
-                          </p>
+                                  return videoUrl ? (
+                                    <video
+                                      key={videoIndex}
+                                      src={videoUrl}
+                                      controls
+                                      playsInline
+                                      style={
+                                        styles.propertyVideo
+                                      }
+                                    />
+                                  ) : null;
+                                }
+                              )}
 
-                          <p>
-                            <strong>Type:</strong>{" "}
-                            {property.type || "Property"}
-                          </p>
-
-                          <p>
-                            <strong>Status:</strong>{" "}
-                            {property.status || "Available"}
-                          </p>
-
-                          {property.description && (
-                            <p>
-                              {property.description}
-                            </p>
+                            </div>
                           )}
+
+
+                        <div style={styles.propertyInfo}>
+
+                          <h3 style={styles.propertyName}>
+                            {property.name ||
+                              "Rigour Property"}
+                          </h3>
+
+                          <p style={styles.propertyLocation}>
+                            {property.location ||
+                              "Limbe, Cameroon"}
+                          </p>
+
+                          <p style={styles.propertyDescription}>
+                            {property.description ||
+                              "Quality property available through Rigour Estate & Construction."}
+                          </p>
+
+                          <div style={styles.propertyBottom}>
+
+                            <span style={styles.propertyPrice}>
+                              {property.price ||
+                                "Price on request"}
+                            </span>
+
+                            <span
+                              style={
+                                styles.propertyStatus
+                              }
+                            >
+                              {property.status ||
+                                "Available"}
+                            </span>
+
+                          </div>
 
                         </div>
 
                       </div>
+                    );
+                  }
+                )}
 
-                    </div>
-                  );
-                }
-              )}
+              </div>
 
             </div>
+
+          ) : (
+
+            <div style={styles.noProperties}>
+              Quality properties are coming soon.
+            </div>
+
+          )}
+
+
+          <div style={styles.propertiesButtonWrapper}>
+
+            <a
+              href="/properties"
+              style={styles.primaryButtonDark}
+            >
+              View All Properties
+            </a>
+
           </div>
-        ) : (
-          <p style={styles.noProperties}>
-            Quality properties are coming soon.
-          </p>
-        )}
 
-        <div style={styles.viewAllContainer}>
-          <a
-            href="/properties"
-            style={styles.viewAllButton}
-          >
-            View All Properties
-          </a>
         </div>
-
       </section>
 
-      {/* =========================
-          BOOKING SECTION
-      ========================= */}
-      <section id="booking" style={styles.booking}>
+
+      {/* ================= BOOKING ================= */}
+      <section
+        id="booking"
+        style={styles.booking}
+      >
 
         <div style={styles.bookingOverlay}>
 
           <div style={styles.bookingContainer}>
 
-            <div style={styles.bookingHeading}>
+            <p style={styles.sectionLabel}>
+              BOOK A CONSULTATION
+            </p>
 
-              <p style={styles.sectionLabel}>
-                BOOK A SESSION
-              </p>
+            <h2 style={styles.sectionTitleWhite}>
+              Let's Discuss Your Project
+            </h2>
 
-              <h2 style={styles.bookingTitle}>
-                Let&apos;s Discuss Your Property Needs
-              </h2>
+            <p style={styles.bookingIntro}>
+              Tell us what you need and our team will get in
+              touch with you.
+            </p>
 
-              <p style={styles.bookingText}>
-                Schedule a consultation with Rigour Estate &
-                Construction to discuss your property,
-                construction, renovation, land, or investment
-                needs.
-              </p>
-
-            </div>
 
             <form
               style={styles.bookingForm}
               onSubmit={(e) => {
+
                 e.preventDefault();
 
-                const form = e.target;
+                const formData =
+                  new FormData(e.currentTarget);
 
-                const name = form.name.value;
-                const phone = form.phone.value;
-                const service = form.service.value;
-                const date = form.date.value;
-                const time = form.time.value;
-                const message = form.message.value;
+                const name =
+                  formData.get("name");
+
+                const phone =
+                  formData.get("phone");
+
+                const service =
+                  formData.get("service");
+
+                const date =
+                  formData.get("date");
+
+                const time =
+                  formData.get("time");
+
+                const message =
+                  formData.get("message");
 
                 const whatsappMessage =
-                  `Hello Rigour Estate & Construction,%0A%0A` +
+                  `Hello Rigour Estate & Construction.%0A%0A` +
                   `I would like to book a consultation.%0A%0A` +
                   `Name: ${name}%0A` +
                   `Phone: ${phone}%0A` +
@@ -732,55 +831,53 @@ export default function Home() {
                   `Message: ${message}`;
 
                 window.open(
-                  `https://wa.me/237652410607?text=${whatsappMessage}`,
+                  `https://wa.me/237652080691?text=${whatsappMessage}`,
                   "_blank"
                 );
               }}
             >
 
-              <div
-                className="bookingRowResponsive"
-                style={styles.bookingRow}
-              >
+              <div style={styles.formGrid}>
 
-                <div style={styles.bookingField}>
-                  <label>Name</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>
+                    Name
+                  </label>
 
                   <input
                     type="text"
                     name="name"
-                    placeholder="Your full name"
                     required
-                    style={styles.bookingInput}
+                    style={styles.formInput}
+                    placeholder="Your name"
                   />
                 </div>
 
-                <div style={styles.bookingField}>
-                  <label>Phone Number</label>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>
+                    Phone Number
+                  </label>
 
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="Your phone number"
                     required
-                    style={styles.bookingInput}
+                    style={styles.formInput}
+                    placeholder="Your phone number"
                   />
                 </div>
 
-              </div>
 
-              <div
-                className="bookingRowResponsive"
-                style={styles.bookingRow}
-              >
-
-                <div style={styles.bookingField}>
-                  <label>Service</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>
+                    Service
+                  </label>
 
                   <select
                     name="service"
                     required
-                    style={styles.bookingInput}
+                    style={styles.formInput}
                   >
                     <option value="">
                       Select a service
@@ -790,8 +887,8 @@ export default function Home() {
                       Property Purchase
                     </option>
 
-                    <option value="Property Rental">
-                      Property Rental
+                    <option value="Rental">
+                      Rental
                     </option>
 
                     <option value="Land Purchase">
@@ -809,49 +906,63 @@ export default function Home() {
                     <option value="Property Consultation">
                       Property Consultation
                     </option>
+
+                    <option value="Architectural Drawings">
+                      Architectural Drawings
+                    </option>
                   </select>
                 </div>
 
-                <div style={styles.bookingField}>
-                  <label>Preferred Date</label>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>
+                    Preferred Date
+                  </label>
 
                   <input
                     type="date"
                     name="date"
                     required
-                    style={styles.bookingInput}
+                    style={styles.formInput}
+                  />
+                </div>
+
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>
+                    Preferred Time
+                  </label>
+
+                  <input
+                    type="time"
+                    name="time"
+                    required
+                    style={styles.formInput}
                   />
                 </div>
 
               </div>
 
-              <div style={styles.bookingField}>
-                <label>Preferred Time</label>
 
-                <input
-                  type="time"
-                  name="time"
-                  required
-                  style={styles.bookingInput}
-                />
-              </div>
-
-              <div style={styles.bookingField}>
-                <label>Additional Message</label>
+              <div style={styles.formGroup}>
+                <label style={styles.formLabel}>
+                  Additional Message
+                </label>
 
                 <textarea
                   name="message"
-                  placeholder="Tell us briefly what you need..."
                   rows="5"
-                  style={styles.bookingTextarea}
-                />
+                  style={styles.formTextarea}
+                  placeholder="Tell us more about what you need..."
+                ></textarea>
               </div>
+
 
               <button
                 type="submit"
-                style={styles.bookingButton}
+                style={styles.formButton}
               >
-                Book a Consultation on WhatsApp
+                Book Consultation on WhatsApp
               </button>
 
             </form>
@@ -859,130 +970,141 @@ export default function Home() {
           </div>
 
         </div>
-
       </section>
 
-      {/* =========================
-          CTA
-      ========================= */}
+
+      {/* ================= CTA ================= */}
       <section style={styles.cta}>
 
-        <div style={styles.ctaContent}>
+        <div style={styles.ctaOverlay}>
 
-          <h2 style={styles.ctaTitle}>
-            Ready to Build Your Future?
-          </h2>
+          <div style={styles.ctaContent}>
 
-          <p style={styles.ctaText}>
-            Let Rigour Estate & Construction help turn your
-            property vision into reality.
-          </p>
+            <p style={styles.sectionLabel}>
+              BUILD WITH RIGOUR
+            </p>
 
-          <a
-            href="#booking"
-            style={styles.primaryButton}
-          >
-            Book a Consultation
-          </a>
+            <h2 style={styles.ctaTitle}>
+              Ready to Build Your Future?
+            </h2>
+
+            <p style={styles.ctaText}>
+              Let us help you turn your property and construction
+              goals into reality.
+            </p>
+
+            <a
+              href="#booking"
+              style={styles.primaryButton}
+            >
+              Get Started
+            </a>
+
+          </div>
 
         </div>
 
       </section>
+      {/* ================= CONTACT ================= */}
+      <section
+        id="contact"
+        style={styles.contact}
+      >
 
-      {/* =========================
-          CONTACT
-      ========================= */}
-      <section id="contact" style={styles.contact}>
-
-        <div style={styles.aboutContainer}>
+        <div style={styles.contactContainer}>
 
           <p style={styles.sectionLabel}>
-            GET IN TOUCH
+            CONTACT US
           </p>
 
           <h2 style={styles.sectionTitle}>
-            Contact Rigour Estate & Construction
+            Let's Work Together
           </h2>
 
-        </div>
+          <p style={styles.contactIntro}>
+            Have a property question, construction project,
+            or development idea? Get in touch with us.
+          </p>
 
-        <div
-          className="contactGridResponsive"
-          style={styles.contactGrid}
-        >
 
-          <div style={styles.contactCard}>
+          <div
+            className="contactGridResponsive"
+            style={styles.contactGrid}
+          >
 
-            <div style={styles.contactIcon}>
-              📞
+            {/* PHONE */}
+            <div style={styles.contactCard}>
+
+              <div style={styles.contactIcon}>
+                ☎
+              </div>
+
+              <h3>Phone</h3>
+
+              <a
+                href="tel:+237652080691"
+                style={styles.contactLink}
+              >
+                +237 652 080 691
+              </a>
+
             </div>
 
-            <h3 style={styles.contactTitle}>
-              Phone
-            </h3>
 
-            <a
-              href="tel:+237652410607"
-              style={styles.contactLink}
-            >
-              +237 6 52 41 06 07
-            </a>
+            {/* WHATSAPP */}
+            <div style={styles.contactCard}>
 
-          </div>
+              <div style={styles.contactIcon}>
+                💬
+              </div>
 
-          <div style={styles.contactCard}>
+              <h3>WhatsApp</h3>
 
-            <div style={styles.contactIcon}>
-              💬
+              <a
+                href="https://wa.me/237652080691"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={styles.contactLink}
+              >
+                Chat With Us
+              </a>
+
             </div>
 
-            <h3 style={styles.contactTitle}>
-              WhatsApp
-            </h3>
 
-            <a
-              href="https://wa.me/237652410607"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={styles.contactLink}
-            >
-              Chat with us
-            </a>
+            {/* EMAIL */}
+            <div style={styles.contactCard}>
 
-          </div>
+              <div style={styles.contactIcon}>
+                ✉
+              </div>
 
-          <div style={styles.contactCard}>
+              <h3>Email</h3>
 
-            <div style={styles.contactIcon}>
-              ✉️
+              <a
+                href="mailto:rigourestateandconstruction@gmail.com"
+                style={styles.contactLink}
+              >
+                rigourestateandconstruction@gmail.com
+              </a>
+
             </div>
 
-            <h3 style={styles.contactTitle}>
-              Email
-            </h3>
 
-            <a
-              href="mailto:rigourestateandconstruction@gmail.com"
-              style={styles.contactLink}
-            >
-              rigourestateandconstruction@gmail.com
-            </a>
+            {/* LOCATION */}
+            <div style={styles.contactCard}>
 
-          </div>
+              <div style={styles.contactIcon}>
+                📍
+              </div>
 
-          <div style={styles.contactCard}>
+              <h3>Location</h3>
 
-            <div style={styles.contactIcon}>
-              📍
+              <p style={styles.contactLocation}>
+                Karata, Limbe, Cameroon
+              </p>
+
             </div>
-
-            <h3 style={styles.contactTitle}>
-              Location
-            </h3>
-
-            <p>
-              Karata, Limbe, Cameroon
-            </p>
 
           </div>
 
@@ -990,33 +1112,81 @@ export default function Home() {
 
       </section>
 
-      {/* =========================
-          FOOTER
-      ========================= */}
+
+      {/* ================= FOOTER ================= */}
       <footer style={styles.footer}>
 
-        <img
-          src="/images/logo2.jpg"
-          alt="Rigour Estate & Construction"
-          style={{
-            width: "100px",
-            height: "100px",
-            objectFit: "contain",
-            borderRadius: "20%",
-            marginBottom: "15px",
-          }}
-        />
+        <div style={styles.footerContainer}>
 
-        <p style={styles.footerText}>
-          © {new Date().getFullYear()} Rigour Estate &
-          Construction. All Rights Reserved.
-        </p>
+          <img
+            src="/images/logo2.jpg"
+            alt="Rigour Estate & Construction"
+            style={styles.footerLogo}
+          />
+
+          <p style={styles.footerText}>
+            Quality construction. Valuable properties.
+            Lasting legacies.
+          </p>
+
+          <div style={styles.footerLinks}>
+
+            <a
+              href="#home"
+              style={styles.footerLink}
+            >
+              Home
+            </a>
+
+            <a
+              href="#about"
+              style={styles.footerLink}
+            >
+              About
+            </a>
+
+            <a
+              href="#services"
+              style={styles.footerLink}
+            >
+              Services
+            </a>
+
+            <a
+              href="#projects"
+              style={styles.footerLink}
+            >
+              Projects
+            </a>
+
+            <a
+              href="/properties"
+              style={styles.footerLink}
+            >
+              Properties
+            </a>
+
+            <a
+              href="#contact"
+              style={styles.footerLink}
+            >
+              Contact
+            </a>
+
+          </div>
+
+          <div style={styles.footerBottom}>
+            <p>
+              © 2026 Rigour Estate & Construction. All rights reserved.
+            </p>
+          </div>
+
+        </div>
 
       </footer>
 
-      {/* =========================
-          PROJECT IMAGE LIGHTBOX
-      ========================= */}
+
+      {/* ================= PROJECT IMAGE LIGHTBOX ================= */}
       {selectedProjectImage && (
 
         <div
@@ -1025,16 +1195,17 @@ export default function Home() {
         >
 
           <button
-            onClick={() => setSelectedProjectImage(null)}
             style={styles.closeButton}
-            aria-label="Close image"
+            onClick={() =>
+              setSelectedProjectImage(null)
+            }
           >
-            ✕
+            ×
           </button>
 
           <img
             src={selectedProjectImage}
-            alt="Rigour project"
+            alt="Project preview"
             style={styles.lightboxImage}
             onClick={(e) => e.stopPropagation()}
           />
@@ -1043,20 +1214,11 @@ export default function Home() {
 
       )}
 
-      {/* =========================
-          RESPONSIVE + PROPERTY CSS
-      ========================= */}
+
+      {/* ================= RESPONSIVE CSS ================= */}
       <style jsx>{`
 
-        * {
-          box-sizing: border-box;
-        }
-
-        html,
-        body {
-          max-width: 100%;
-          overflow-x: hidden;
-        }
+        /* ---------- PROPERTY MOVEMENT ---------- */
 
         @keyframes propertyMove {
           from {
@@ -1079,29 +1241,12 @@ export default function Home() {
           animation-play-state: paused;
         }
 
-        /* =========================
-           TABLET
-        ========================= */
+
+        /* ---------- LARGE TABLETS ---------- */
 
         @media (max-width: 1024px) {
 
-          .navLinksResponsive {
-            gap: 15px !important;
-          }
-
-          .navLinksResponsive a {
-            font-size: 13px !important;
-          }
-
-          .cardGridResponsive {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-
-          .contactGridResponsive {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-
-          .projectsGridResponsive {
+          .solutionsGridResponsive {
             grid-template-columns: repeat(2, 1fr) !important;
           }
 
@@ -1109,22 +1254,30 @@ export default function Home() {
             grid-template-columns: repeat(2, 1fr) !important;
           }
 
-          .heroTitle {
-            font-size: 48px !important;
+          .projectsGridResponsive {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
 
-          .propertyCardResponsive {
-            width: 320px !important;
+          .valuesGridResponsive {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
+
+          .contactGridResponsive {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
+
+        /* ---------- MOBILE ---------- */
 
         @media (max-width: 768px) {
 
           .navLinksResponsive {
+            display: none !important;
+          }
+
+          .navWhatsAppResponsive {
             display: none !important;
           }
 
@@ -1136,38 +1289,9 @@ export default function Home() {
             display: flex !important;
           }
 
-          .heroTitle {
-            font-size: clamp(36px, 10vw, 48px) !important;
-            line-height: 1.08 !important;
-            letter-spacing: 0 !important;
-          }
 
-          .heroBrand {
-            font-size: 14px !important;
-            letter-spacing: 2px !important;
-          }
-
-          .heroText {
-            font-size: 16px !important;
-            line-height: 1.6 !important;
-          }
-
-          .heroButtons {
-            flex-direction: column !important;
-            align-items: stretch !important;
-            width: 100% !important;
-            max-width: 350px !important;
-            margin: 0 auto !important;
-          }
-
-          .heroButtons a {
-            width: 100% !important;
-            text-align: center !important;
-          }
-
-          .cardGridResponsive {
+          .solutionsGridResponsive {
             grid-template-columns: 1fr !important;
-            width: 100% !important;
           }
 
           .servicesGridResponsive {
@@ -1178,259 +1302,78 @@ export default function Home() {
             grid-template-columns: 1fr !important;
           }
 
+          .valuesGridResponsive {
+            grid-template-columns: 1fr !important;
+          }
+
           .contactGridResponsive {
             grid-template-columns: 1fr !important;
           }
 
-          .valuesRowResponsive {
-            flex-direction: column !important;
-            align-items: stretch !important;
-          }
 
-          .valuesRowResponsive > div {
-            width: 100% !important;
-          }
-
-          .bookingRowResponsive {
+          .serviceListsResponsive {
             grid-template-columns: 1fr !important;
           }
 
-          .bookingForm {
-            padding: 22px !important;
-          }
-
-          .bookingTitle {
-            font-size: 30px !important;
-          }
-
-          .bookingText {
-            font-size: 15px !important;
-          }
-
-          .sectionTitle {
-            font-size: 30px !important;
-            line-height: 1.2 !important;
-          }
-
-          .sectionTitleWhite {
-            font-size: 30px !important;
-            line-height: 1.2 !important;
-          }
-
-          .propertyViewportResponsive {
-            width: 100% !important;
-          }
-
-          .propertyCardResponsive {
-            width: min(82vw, 330px) !important;
-          }
-
-          .propertyImage {
-            height: 210px !important;
-          }
-
-          .propertyVideo {
-            max-height: 220px !important;
-          }
-
-          .propertyContent {
-            padding: 16px !important;
-          }
-
-          .propertyName {
-            font-size: 20px !important;
-          }
-
-          .ctaTitle {
-            font-size: 30px !important;
-          }
-
-          .ctaText {
-            font-size: 16px !important;
-            line-height: 1.6 !important;
-          }
-
-          .contactCard {
-            padding: 22px !important;
-          }
-
-          .lightboxImage {
-            max-width: 94vw !important;
-            max-height: 80vh !important;
-          }
 
           .property-track {
             animation-duration: 28s;
           }
+
+
+          .propertyCardResponsive {
+            width: 300px !important;
+          }
+
+
+          .heroTitleResponsive {
+            font-size: 42px !important;
+          }
+
+
+          .heroContentResponsive {
+            padding: 40px 20px !important;
+          }
+
+
+          .navContainerResponsive {
+            padding: 0 18px !important;
+          }
+
         }
 
-        /* =========================
-           SMALL PHONES
-        ========================= */
+
+        /* ---------- SMALL PHONES ---------- */
 
         @media (max-width: 480px) {
 
-          .navbar {
-            padding: 10px 15px !important;
-          }
-
-          .logoImage {
-            width: 62px !important;
-            height: 62px !important;
-          }
-
-          .logoText {
-            font-size: 14px !important;
-            line-height: 1.2 !important;
-          }
-
-          .logoText span {
-            font-size: 7px !important;
-            letter-spacing: 0.5px !important;
-          }
-
-          .menuButtonResponsive {
-            font-size: 25px !important;
-          }
-
-          .mobileMenuResponsive {
-            width: 210px !important;
-            top: 72px !important;
-          }
-
-          .hero {
-            min-height: 650px !important;
-            padding: 55px 18px !important;
-          }
-
-          .heroTitle {
-            font-size: 35px !important;
-          }
-
-          .heroBrand {
-            font-size: 12px !important;
-            letter-spacing: 1.5px !important;
-          }
-
-          .heroText {
-            font-size: 15px !important;
-          }
-
-          .about,
-          .whatWeDo,
-          .services,
-          .projects,
-          .properties,
-          .contact {
-            padding-left: 15px !important;
-            padding-right: 15px !important;
-          }
-
-          .about {
-            padding-top: 65px !important;
-            padding-bottom: 65px !important;
-          }
-
-          .whatWeDo {
-            padding-top: 65px !important;
-            padding-bottom: 65px !important;
-          }
-
-          .services {
-            padding-top: 65px !important;
-            padding-bottom: 65px !important;
-          }
-
-          .projects {
-            padding-top: 65px !important;
-            padding-bottom: 65px !important;
-          }
-
-          .properties {
-            padding-top: 65px !important;
-            padding-bottom: 65px !important;
-          }
-
-          .contact {
-            padding-top: 65px !important;
-            padding-bottom: 65px !important;
-          }
-
-          .cardImage {
-            height: 210px !important;
-          }
-
-          .projectImage {
+          .architecturalSolutionPhoto {
             height: 230px !important;
           }
 
+          .heroTitleResponsive {
+            font-size: 34px !important;
+          }
+
           .propertyCardResponsive {
-            width: 82vw !important;
+            width: 280px !important;
           }
 
-          .booking {
-            padding: 65px 15px !important;
-          }
-
-          .bookingForm {
-            padding: 18px !important;
-            border-radius: 10px !important;
-          }
-
-          .bookingInput,
-          .bookingTextarea {
-            font-size: 16px !important;
-          }
-
-          .bookingButton {
-            font-size: 14px !important;
-            line-height: 1.4 !important;
-          }
-
-          .cta {
-            padding: 70px 18px !important;
-          }
-
-          .footer {
-            padding: 25px 15px !important;
-          }
         }
 
-        /* =========================
-           VERY SMALL PHONES
-        ========================= */
+
+        /* ---------- VERY SMALL PHONES ---------- */
 
         @media (max-width: 360px) {
 
-          .logoImage {
-            width: 52px !important;
-            height: 52px !important;
+          .architecturalSolutionPhoto {
+            height: 210px !important;
           }
 
-          .logoText {
-            font-size: 12px !important;
+          .heroTitleResponsive {
+            font-size: 30px !important;
           }
 
-          .logoText span {
-            font-size: 6px !important;
-          }
-
-          .heroTitle {
-            font-size: 31px !important;
-          }
-
-          .heroBrand {
-            font-size: 11px !important;
-          }
-
-          .propertyCardResponsive {
-            width: 84vw !important;
-          }
-
-          .sectionTitle,
-          .sectionTitleWhite {
-            font-size: 27px !important;
-          }
         }
 
       `}</style>
@@ -1438,78 +1381,102 @@ export default function Home() {
     </main>
   );
 }
-
-
-/*
-==================================================
-                    STYLES
-==================================================
-*/
+/* =========================================================
+   PAGE STYLES
+========================================================= */
 
 const styles = {
+
+  /* ================= PAGE ================= */
 
   page: {
     margin: 0,
     padding: 0,
-    width: "100%",
-    maxWidth: "100%",
-    overflowX: "hidden",
     background: "#f7f5f0",
-    color: "#222222",
+    color: "#171717",
     fontFamily: "Arial, Helvetica, sans-serif",
+    overflowX: "hidden",
   },
 
 
-  /* NAVBAR */
+  /* ================= NAVBAR ================= */
 
   navbar: {
     position: "sticky",
     top: 0,
-    zIndex: 100,
-    width: "100%",
+    zIndex: 1000,
     background: "#111111",
     color: "#ffffff",
+    width: "100%",
+  },
+
+  navContainer: {
+    maxWidth: "1300px",
+    margin: "0 auto",
+    padding: "12px 25px",
     display: "flex",
-    justifyContent: "space-between",
     alignItems: "center",
-    padding: "12px 5%",
-    boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
+    justifyContent: "flex-start",
+    minHeight: "70px",
+    width: "100%",
+    boxSizing: "border-box",
   },
 
   logo: {
     display: "flex",
     alignItems: "center",
     gap: "10px",
-    minWidth: 0,
+    flexShrink: 0,
+    margin: 0,
   },
 
   logoImage: {
-    width: "75px",
-    height: "75px",
+    width: "48px",
+    height: "48px",
     objectFit: "contain",
-    flexShrink: 0,
   },
 
   logoText: {
-    fontSize: "18px",
-    fontWeight: "700",
+    color: "#ffffff",
+    fontSize: "17px",
+    fontWeight: "800",
+    lineHeight: "1.1",
     letterSpacing: "1px",
-    lineHeight: "1.2",
-    whiteSpace: "nowrap",
+    textAlign: "left",
+  },
+
+  logoTextSpan: {
+    fontSize: "9px",
   },
 
   navLinks: {
     display: "flex",
     gap: "22px",
     alignItems: "center",
+    marginLeft: "auto",
+    marginRight: "0",
+    justifyContent: "flex-end",
   },
 
   navLink: {
     color: "#ffffff",
     textDecoration: "none",
-    fontSize: "15px",
+    fontSize: "14px",
     fontWeight: "600",
     whiteSpace: "nowrap",
+  },
+
+  navWhatsApp: {
+    display: "inline-block",
+    background: "#25D366",
+    color: "#ffffff",
+    textDecoration: "none",
+    padding: "10px 17px",
+    borderRadius: "6px",
+    fontSize: "14px",
+    fontWeight: "700",
+    whiteSpace: "nowrap",
+    marginLeft: "5px",
   },
 
   menuButton: {
@@ -1517,84 +1484,98 @@ const styles = {
     background: "transparent",
     border: "none",
     color: "#ffffff",
-    fontSize: "28px",
+    fontSize: "30px",
     cursor: "pointer",
-    padding: "5px",
-    flexShrink: 0,
+    marginLeft: "auto",
   },
 
   mobileMenu: {
-    position: "fixed",
-    top: "78px",
-    right: 0,
-    width: "230px",
-    maxWidth: "85vw",
-    background: "#111111",
-    zIndex: 99,
-    display: "flex",
+    display: "none",
     flexDirection: "column",
-    padding: "15px 20px",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
+    padding: "18px 25px 25px",
+    background: "#111111",
+    gap: "14px",
   },
 
   mobileLink: {
     color: "#ffffff",
     textDecoration: "none",
-    padding: "14px 5px",
-    borderBottom: "1px solid #333333",
+    padding: "10px 0",
+    fontSize: "16px",
+  },
+
+  mobileWhatsApp: {
+    color: "#ffffff",
+    background: "#25D366",
+    textDecoration: "none",
+    padding: "12px 15px",
+    borderRadius: "6px",
     fontSize: "15px",
+    fontWeight: "700",
+    textAlign: "center",
+    marginTop: "12px",
   },
 
 
-  /* HERO */
+  /* ================= HERO ================= */
 
   hero: {
-    minHeight: "85vh",
-    width: "100%",
+    minHeight: "78vh",
     backgroundImage:
-      "linear-gradient(rgba(34, 32, 32, 0.95), rgba(18, 18, 19, 0.68)),url('/images/hero-background.jpg')",
+      "url('/images/hero-background.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    position: "relative",
+  },
+
+  heroOverlay: {
+    minHeight: "78vh",
+    background:
+      "linear-gradient(90deg, rgba(0,0,0,0.78), rgba(0, 0, 0, 0.78))",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    color: "#ffffff",
-    padding: "70px 20px",
   },
 
   heroContent: {
-    maxWidth: "950px",
+    maxWidth: "1200px",
     width: "100%",
+    margin: "0 auto",
+    padding: "80px 25px",
+    color: "#ffffff",
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    boxSizing: "border-box",
   },
 
-  heroBrand: {
-    color: "#d4b36a",
-    fontSize: "20px",
+  heroLabel: {
+    color: "#c7a35a",
+    fontSize: "14px",
     fontWeight: "700",
-    letterSpacing: "3px",
-    marginBottom: "20px",
+    letterSpacing: "2px",
+    marginBottom: "18px",
   },
 
   heroTitle: {
-    fontSize: "58px",
-    lineHeight: "1.1",
-    margin: "0 0 25px",
-    fontWeight: "800",
-    letterSpacing: "1px",
+    fontSize: "60px",
+    lineHeight: "1.08",
+    margin: "0 auto 25px",
+    maxWidth: "800px",
+    textAlign: "center",
   },
 
   heroText: {
-    fontSize: "20px",
+    maxWidth: "650px",
+    fontSize: "19px",
     lineHeight: "1.7",
-    color: "#eeeeee",
-    maxWidth: "700px",
-    margin: "0 auto 35px",
+    marginBottom: " 0 auto 35px",
+    color: "#f1f1f1",
+    textAlign: "center",
   },
 
   heroButtons: {
     display: "flex",
-    justifyContent: "center",
     gap: "15px",
     flexWrap: "wrap",
   },
@@ -1603,137 +1584,170 @@ const styles = {
     display: "inline-block",
     background: "#c7a35a",
     color: "#111111",
-    padding: "14px 28px",
-    borderRadius: "6px",
     textDecoration: "none",
+    padding: "14px 24px",
+    borderRadius: "5px",
     fontWeight: "700",
-    border: "none",
-    cursor: "pointer",
   },
 
   secondaryButton: {
     display: "inline-block",
     background: "transparent",
     color: "#ffffff",
-    padding: "14px 28px",
-    borderRadius: "6px",
     textDecoration: "none",
+    padding: "13px 24px",
+    borderRadius: "5px",
     fontWeight: "700",
     border: "1px solid #ffffff",
   },
 
 
-  /* INTRODUCTION */
+  /* ================= GENERAL ================= */
 
-  about: {
-    padding: "85px 20px",
-    background: "#f0eedc",
-  },
-
-  aboutContainer: {
-    maxWidth: "1000px",
-    width: "100%",
-    margin: "auto",
+  sectionLabel: {
+    color: "#c7a35a",
+    fontSize: "13px",
+    fontWeight: "800",
+    letterSpacing: "2px",
+    marginBottom: "12px",
+    textTransform: "uppercase",
     textAlign: "center",
   },
 
-  sectionLabel: {
-    color: "#b08a3e",
-    fontSize: "13px",
-    fontWeight: "700",
-    letterSpacing: "2px",
-    textTransform: "uppercase",
-    marginBottom: "10px",
-  },
-
   sectionTitle: {
-    fontSize: "38px",
-    lineHeight: "1.2",
+    fontSize: "42px",
     margin: "0 0 20px",
-    color: "#171717",
+    lineHeight: "1.2",
+    textAlign: "center",
   },
 
   sectionTitleWhite: {
-    fontSize: "38px",
-    lineHeight: "1.2",
+    fontSize: "42px",
     margin: "0 0 20px",
+    lineHeight: "1.2",
     color: "#ffffff",
+    textAlign: "center",
   },
 
-  sectionText: {
-    fontSize: "17px",
-    lineHeight: "1.8",
+  projectIntro: {
+    maxWidth: "700px",
+    lineHeight: "1.7",
     color: "#555555",
+    margin: "0 auto",
+    textAlign: "center",
   },
 
-  valuesRow: {
-    display: "flex",
-    justifyContent: "center",
+
+  /* ================= ABOUT ================= */
+
+  about: {
+    background: "#f0eedc",
+    padding: "90px 20px",
+  },
+
+  aboutContainer: {
+    maxWidth: "1200px",
+    width: "100%",
+    margin: "0 auto",
+  },
+
+  aboutText: {
+    maxWidth: "850px",
+    lineHeight: "1.8",
+    fontSize: "17px",
+    color: "#444444",
+    margin: "0 auto",
+    textAlign: "center",
+  },
+
+  valuesGrid: {
+    display: "grid",
+    gridTemplateColumns:
+      "repeat(3, minmax(0, 1fr))",
     gap: "25px",
-    flexWrap: "wrap",
-    marginTop: "40px",
+    marginTop: "45px",
   },
 
   valueCard: {
-    width: "260px",
-    padding: "25px",
-    background: "#f7f3ea",
+    background: "#ffffff",
+    padding: "30px",
     borderRadius: "10px",
-    boxShadow: "0 5px 20px rgba(0,0,0,0.05)",
   },
 
-  valueTitle: {
+  valueIcon: {
+    color: "#c7a35a",
+    fontWeight: "800",
     fontSize: "20px",
-    marginBottom: "10px",
+    marginBottom: "15px",
   },
 
 
-  /* WHAT WE DO */
+  /* ================= WHAT WE DO ================= */
 
   whatWeDo: {
-    padding: "85px 20px",
     background: "#b6b3ad",
+    padding: "90px 20px",
   },
 
-  cardGrid: {
-    maxWidth: "1200px",
-    width: "100%",
-    margin: "40px auto 0",
+  solutionsGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-    gap: "22px",
+    gridTemplateColumns:
+      "repeat(5, minmax(0, 1fr))",
+    gap: "18px",
+    marginTop: "40px",
   },
 
-  imageCard: {
-    minWidth: 0,
+  solutionCard: {
     background: "#ffffff",
-    borderRadius: "12px",
+    borderRadius: "10px",
     overflow: "hidden",
-    boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+    boxShadow:
+      "0 8px 25px rgba(0,0,0,0.10)",
   },
 
-  cardImage: {
+  solutionImage: {
     width: "100%",
-    height: "230px",
+    height: "220px",
     objectFit: "cover",
     display: "block",
   },
 
-  cardContent: {
+  architecturalSolutionPhoto: {
+    width: "100%",
+    height: "220px",
+    background: "#eeeeee",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#777777",
+    fontSize: "14px",
+    textAlign: "center",
     padding: "20px",
+    boxSizing: "border-box",
   },
 
-  cardTitle: {
-    fontSize: "20px",
-    margin: "0 0 10px",
+  solutionContent: {
+    padding: "24px",
+  },
+
+  solutionTitle: {
+    margin: "0 0 12px",
+    fontSize: "21px",
+  },
+
+  solutionText: {
+    margin: 0,
+    lineHeight: "1.6",
+    color: "#555555",
+    fontSize: "14px",
   },
 
 
-  /* SERVICES */
+  /* ================= SERVICES ================= */
 
   services: {
-    padding: "85px 20px",
     background: "#171717",
+    padding: "90px 20px",
     color: "#ffffff",
   },
 
@@ -1742,58 +1756,88 @@ const styles = {
     width: "100%",
     margin: "40px auto 0",
     display: "grid",
-    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    gridTemplateColumns:
+      "repeat(3, minmax(0, 1fr))",
     gap: "25px",
   },
 
   serviceCard: {
-    minWidth: 0,
-    padding: "30px",
-    border: "1px solid #444444",
-    borderRadius: "10px",
     background: "#222222",
+    border: "1px solid #333333",
+    borderRadius: "10px",
+    padding: "30px",
+    lineHeight: "1.7",
+    color: "#eeeeee",
   },
 
   serviceTitle: {
+    color: "#dfd115",
+    fontSize: "22px",
+    margin: "0 0 15px",
+  },
+
+  serviceLists: {
+    maxWidth: "1100px",
+    width: "100%",
+    margin: "45px auto 0",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "50px",
+    padding: "0 10px",
+    boxSizing: "border-box",
+  },
+
+  serviceListColumn: {
+    background: "#222222",
+    border: "1px solid #444444",
+    borderRadius: "10px",
+    padding: "30px",
+  },
+
+  serviceListTitle: {
     color: "#c7a35a",
-    fontSize: "21px",
-    marginBottom: "12px",
+    fontSize: "22px",
+    margin: "0 0 20px",
+    textTransform: "uppercase",
+  },
+
+  serviceList: {
+    margin: 0,
+    paddingLeft: "22px",
+    color: "#ffffff",
+    lineHeight: "1.9",
+    fontSize: "16px",
   },
 
 
-  /* PROJECTS */
+  /* ================= PROJECTS ================= */
 
   projects: {
-    padding: "85px 20px",
     background: "#f4f5ec",
-    textAlign: "center",
+    padding: "90px 20px",
   },
 
   projectsContainer: {
     maxWidth: "1200px",
     width: "100%",
-    margin: "auto",
-  },
-
-  projectIntro: {
-    color: "#555555",
-    fontSize: "16px",
+    margin: "0 auto",
   },
 
   projectsGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    gridTemplateColumns:
+      "repeat(3, minmax(0, 1fr))",
     gap: "25px",
     marginTop: "40px",
   },
 
   projectCard: {
-    minWidth: 0,
     background: "#ffffff",
-    borderRadius: "12px",
+    borderRadius: "10px",
     overflow: "hidden",
-    boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
     cursor: "pointer",
+    boxShadow:
+      "0 8px 25px rgba(0,0,0,0.08)",
   },
 
   projectImage: {
@@ -1804,37 +1848,40 @@ const styles = {
   },
 
   projectText: {
-    padding: "18px",
-    fontSize: "17px",
-    fontWeight: "600",
-    textAlign: "center",
+    padding: "20px",
+    fontSize: "18px",
+    fontWeight: "700",
   },
 
 
-  /* FEATURED PROPERTIES */
+  /* ================= PROPERTIES ================= */
 
   properties: {
-    padding: "85px 20px",
     background: "#ebe4d6",
+    padding: "90px 20px",
     overflow: "hidden",
+  },
+
+  propertiesContainer: {
+    maxWidth: "1200px",
     width: "100%",
+    margin: "0 auto",
   },
 
   propertyViewport: {
-    maxWidth: "1200px",
     width: "100%",
-    margin: "40px auto 0",
     overflow: "hidden",
+    marginTop: "40px",
   },
 
   propertyCard: {
-    width: "350px",
-    maxWidth: "90vw",
+    width: "330px",
     flexShrink: 0,
     background: "#ffffff",
-    borderRadius: "12px",
+    borderRadius: "10px",
     overflow: "hidden",
-    boxShadow: "0 8px 25px rgba(0,0,0,0.12)",
+    boxShadow:
+      "0 8px 25px rgba(0,0,0,0.10)",
   },
 
   propertyImage: {
@@ -1846,206 +1893,253 @@ const styles = {
 
   propertyVideo: {
     width: "100%",
-    maxHeight: "250px",
-    objectFit: "cover",
+    maxHeight: "260px",
     display: "block",
+    background: "#000000",
   },
 
-  propertyContent: {
-    padding: "20px",
+  propertyInfo: {
+    padding: "22px",
   },
 
   propertyName: {
-    fontSize: "22px",
-    margin: "0 0 10px",
+    margin: "0 0 8px",
+    fontSize: "21px",
   },
 
-  propertyDetails: {
+  propertyLocation: {
+    margin: "0 0 12px",
+    color: "#777777",
+    fontSize: "14px",
+  },
+
+  propertyDescription: {
     color: "#555555",
-    lineHeight: "1.7",
-    fontSize: "15px",
+    lineHeight: "1.6",
+    fontSize: "14px",
+  },
+
+  propertyBottom: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gap: "10px",
+    marginTop: "18px",
+  },
+
+  propertyPrice: {
+    fontWeight: "800",
+    color: "#222222",
+  },
+
+  propertyStatus: {
+    background: "#c7a35a",
+    color: "#111111",
+    padding: "6px 10px",
+    borderRadius: "4px",
+    fontSize: "12px",
+    fontWeight: "700",
   },
 
   noProperties: {
+    background: "#ffffff",
+    padding: "40px",
     textAlign: "center",
+    borderRadius: "10px",
+    marginTop: "40px",
     color: "#555555",
-    marginTop: "35px",
   },
 
-  viewAllContainer: {
+  propertiesButtonWrapper: {
     textAlign: "center",
+    marginTop: "45px",
   },
 
-  viewAllButton: {
+  primaryButtonDark: {
     display: "inline-block",
-    marginTop: "35px",
-    padding: "14px 30px",
     background: "#171717",
     color: "#ffffff",
     textDecoration: "none",
-    borderRadius: "6px",
+    padding: "14px 24px",
+    borderRadius: "5px",
     fontWeight: "700",
   },
 
 
-  /* BOOKING */
+  /* ================= BOOKING ================= */
 
   booking: {
-    padding: "90px 20px",
     backgroundImage:
-      "linear-gradient(rgba(17, 17, 17, 0.82), rgba(27, 26, 26, 0.9)), url('/images/hero-background.jpg')",
+      "url('/images/hero-background.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    color: "#ffffff",
+    backgroundRepeat: "no-repeat",
+    position: "relative",
   },
 
   bookingOverlay: {
-    width: "100%",
+    background:
+      "rgba(0,0,0,0.78)",
+    padding: "90px 20px",
   },
 
   bookingContainer: {
-    maxWidth: "900px",
+    maxWidth: "1000px",
     width: "100%",
-    margin: "auto",
+    margin: "0 auto",
   },
 
-  bookingHeading: {
-    textAlign: "center",
-    marginBottom: "45px",
-  },
-
-  bookingTitle: {
-    fontSize: "40px",
-    lineHeight: "1.2",
-    margin: "10px 0 15px",
-    color: "#ffffff",
-  },
-
-  bookingText: {
-    maxWidth: "700px",
-    margin: "auto",
+  bookingIntro: {
+    color: "#eeeeee",
     lineHeight: "1.7",
-    color: "#dddddd",
-    fontSize: "16px",
+    maxWidth: "700px",
+    margin: "0 auto",
+    textAlign: "center",
   },
 
   bookingForm: {
-    background: "rgba(241, 241, 228, 0.97)",
+    marginTop: "40px",
+    background: "#f1f7da",
     padding: "35px",
-    borderRadius: "14px",
-    boxShadow: "0 15px 45px rgba(0,0,0,0.25)",
-    color: "#171717",
-    width: "100%",
+    borderRadius: "10px",
+    boxSizing: "border-box",
+    boxShadow:
+      "0 10px 30px rgba(0,0,0,0.25)",
   },
 
-  bookingRow: {
+  formGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "20px",
   },
 
-  bookingField: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "8px",
+  formGroup: {
     marginBottom: "20px",
-    minWidth: 0,
   },
 
-  bookingInput: {
+  formLabel: {
+    display: "block",
+    marginBottom: "8px",
+    color: "#222222",
+    fontWeight: "600",
+  },
+
+  formInput: {
     width: "100%",
-    maxWidth: "100%",
     boxSizing: "border-box",
-    padding: "14px",
-    border: "1px solid #d5d5d5",
-    borderRadius: "7px",
+    padding: "13px",
+    borderRadius: "5px",
+    border: "1px solid #cccccc",
     fontSize: "15px",
     background: "#ffffff",
-    color: "#171717",
+    color: "#111111",
   },
 
-  bookingTextarea: {
+  formSelect: {
     width: "100%",
-    maxWidth: "100%",
     boxSizing: "border-box",
-    padding: "14px",
-    border: "1px solid #d5d5d5",
-    borderRadius: "7px",
+    padding: "13px",
+    borderRadius: "5px",
+    border: "1px solid #cccccc",
     fontSize: "15px",
+    background: "#ffffff",
+    color: "#111111",
+  },
+
+  formTextarea: {
+    width: "100%",
+    boxSizing: "border-box",
+    padding: "13px",
+    borderRadius: "5px",
+    border: "1px solid #cccccc",
+    fontSize: "15px",
+    background: "#ffffff",
+    color: "#111111",
     resize: "vertical",
-    fontFamily: "Arial, Helvetica, sans-serif",
-    background: "#ffffff",
-    color: "#171717",
   },
 
-  bookingButton: {
-    width: "100%",
-    padding: "15px",
-    background: "#c7a35a",
-    color: "#171717",
+  formButton: {
+    background: "#25D366",
+    color: "#ffffff",
     border: "none",
-    borderRadius: "7px",
-    fontSize: "16px",
+    padding: "15px 24px",
+    borderRadius: "5px",
     fontWeight: "700",
+    fontSize: "15px",
     cursor: "pointer",
   },
 
 
-  /* CTA */
+  /* ================= CTA ================= */
 
   cta: {
-    padding: "100px 20px",
     backgroundImage:
-      "linear-gradient(rgba(22, 21, 22, 0.95), rgba(19, 19, 20, 0.72)), url('/images/hero-background.jpg')",
+      "url('/images/hero-background.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    color: "#ffffff",
-    textAlign: "center",
+  },
+
+  ctaOverlay: {
+    background:
+      "rgba(0,0,0,0.72)",
+    padding: "90px 20px",
   },
 
   ctaContent: {
-    maxWidth: "800px",
-    width: "100%",
-    margin: "auto",
+    maxWidth: "900px",
+    margin: "0 auto",
+    textAlign: "center",
+    color: "#ffffff",
   },
 
   ctaTitle: {
-    fontSize: "40px",
-    lineHeight: "1.2",
-    marginBottom: "15px",
+    fontSize: "45px",
+    margin: "0 0 20px",
   },
 
   ctaText: {
-    fontSize: "18px",
+    fontSize: "17px",
     lineHeight: "1.7",
     marginBottom: "30px",
   },
 
 
-  /* CONTACT */
+  /* ================= CONTACT ================= */
 
   contact: {
-    padding: "85px 20px",
-    background: "#f3f7e8",
+    background: "#f1f5e6",
+    padding: "90px 20px",
+  },
+
+  contactContainer: {
+    maxWidth: "1200px",
+    width: "100%",
+    margin: "0 auto",
+  },
+
+  contactIntro: {
+    maxWidth: "700px",
+    lineHeight: "1.7",
+    color: "#555555",
+    margin: "0 auto",
+    textAlign: "center",
   },
 
   contactGrid: {
-    maxWidth: "1100px",
-    width: "100%",
-    margin: "40px auto 0",
     display: "grid",
-    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+    gridTemplateColumns:
+      "repeat(4, minmax(0, 1fr))",
     gap: "20px",
+    marginTop: "45px",
   },
 
   contactCard: {
-    minWidth: 0,
-    padding: "25px",
-    background: "#c8e2d3",
+    background: "#74be77",
+    padding: "28px",
     borderRadius: "10px",
     textAlign: "center",
-    boxShadow: "0 5px 18px rgba(0,0,0,0.05)",
-    overflowWrap: "anywhere",
+    boxShadow:
+      "0 8px 25px rgba(0,0,0,0.06)",
   },
 
   contactIcon: {
@@ -2053,57 +2147,85 @@ const styles = {
     marginBottom: "12px",
   },
 
-  contactTitle: {
-    fontSize: "18px",
-    marginBottom: "8px",
-  },
-
   contactLink: {
-    color: "#171717",
+    color: "#222222",
     textDecoration: "none",
+    fontWeight: "600",
     wordBreak: "break-word",
   },
 
+  contactLocation: {
+    color: "#555555",
+    margin: 0,
+  },
 
-  /* FOOTER */
+
+  /* ================= FOOTER ================= */
 
   footer: {
     background: "#111111",
     color: "#ffffff",
-    padding: "30px 20px",
-    textAlign: "center",
+    padding: "60px 20px 25px",
+  },
+
+  footerContainer: {
+    maxWidth: "1200px",
     width: "100%",
+    margin: "0 auto",
+    textAlign: "center",
+  },
+
+  footerLogo: {
+    width: "130px",
+    height: "auto",
+    marginBottom: "20px",
   },
 
   footerText: {
-    margin: 0,
     color: "#cccccc",
+    lineHeight: "1.6",
+  },
+
+  footerLinks: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "25px",
+    flexWrap: "wrap",
+    marginTop: "25px",
+  },
+
+  footerLink: {
+    color: "#ffffff",
+    textDecoration: "none",
     fontSize: "14px",
   },
 
+  footerBottom: {
+    borderTop: "1px solid #333333",
+    marginTop: "35px",
+    paddingTop: "20px",
+    color: "#aaaaaa",
+    fontSize: "13px",
+  },
 
-  /* LIGHTBOX */
+
+  /* ================= LIGHTBOX ================= */
 
   lightbox: {
     position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
+    inset: 0,
+    zIndex: 2000,
     background: "rgba(0,0,0,0.92)",
-    zIndex: 1000,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "20px",
-    boxSizing: "border-box",
+    padding: "30px",
   },
 
   lightboxImage: {
-    maxWidth: "95%",
-    maxHeight: "90%",
-    width: "auto",
-    height: "auto",
+    maxWidth: "90%",
+    maxHeight: "85vh",
     objectFit: "contain",
   },
 
@@ -2114,8 +2236,10 @@ const styles = {
     background: "transparent",
     border: "none",
     color: "#ffffff",
-    fontSize: "32px",
+    fontSize: "45px",
     cursor: "pointer",
-    zIndex: 1001,
+    lineHeight: 1,
   },
+
 };
+
