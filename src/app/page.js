@@ -229,19 +229,19 @@ export default function Home() {
       >
         <div style={styles.aboutContainer}>
 
-          <p style={styles.sectionLabel}>
+          {/*<p style={styles.sectionLabel}>
             ABOUT US
-          </p>
+          </p>*/}
 
           <h2 style={styles.sectionTitle}>
-            Building With Purpose
+            ABOUT US
           </h2>
 
           <p style={styles.aboutText}>
-            Rigour Estate & Construction is committed to delivering
-            quality construction, reliable property solutions, and
-            professional services designed to meet the needs of our
-            clients.
+            Rigour Estate & Construction is a multidisciplinary Company operating accross real estate, construction, Civil engineering, structural works, property development, renovation and remodelling and project
+            Management.
+            With a commitment to professionalism, quality and client satisfaction, we transform property and construction needs into practical, well managed and lasting solutions.
+            Building Legacies, One Brick at a Time.
           </p>
 
           <div
@@ -281,7 +281,7 @@ export default function Home() {
       </section>
 
 
-      {/* ================= WHAT WE DO BEST ================= */}
+      {/* ================= WHAT WE OFFER================= */}
       <section
         id="solutions"
         style={styles.whatWeDo}
@@ -293,7 +293,7 @@ export default function Home() {
           </p>
 
           <h2 style={styles.sectionTitle}>
-            What We Do Best
+            What We Offer
           </h2>
 
           <p style={styles.projectIntro}>
@@ -426,11 +426,11 @@ export default function Home() {
         <div style={styles.aboutContainer}>
 
           <p style={styles.sectionLabel}>
-            OUR SERVICES
+            AND HAVE
           </p>
 
           <h2 style={styles.sectionTitleWhite}>
-            Professional Services
+            More of Our Services
           </h2>
 
         </div>
