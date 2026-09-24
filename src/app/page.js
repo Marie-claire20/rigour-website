@@ -1125,11 +1125,10 @@ export default function Home() {
           />
 
           <p style={styles.footerText}>
-            Quality construction. Valuable properties.
-            Lasting legacies.
+            Building Legacies, One Brick at a Time.
           </p>
 
-          <div style={styles.footerLinks}>
+         <div style={styles.footerLinks}>
 
             <a
               href="#home"
@@ -1173,7 +1172,7 @@ export default function Home() {
               Contact
             </a>
 
-          </div>
+          </div> 
 
           <div style={styles.footerBottom}>
             <p>
