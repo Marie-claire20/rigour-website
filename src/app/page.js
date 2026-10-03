@@ -229,9 +229,9 @@ export default function Home() {
       >
         <div style={styles.aboutContainer}>
 
-          {/*<p style={styles.sectionLabel}>
-            ABOUT US
-          </p>*/}
+          <p style={styles.sectionLabel}>
+            Know
+          </p>
 
           <h2 style={styles.sectionTitle}>
             ABOUT US
